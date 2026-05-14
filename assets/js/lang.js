@@ -1,7 +1,7 @@
 
 (function () {
   const root = document.documentElement;
-  const saved = localStorage.getItem("yaman-lang") || "cs";
+  const saved = localStorage.getItem("yaman-lang") || "en";
 
   function setLang(lang) {
     root.setAttribute("data-lang", lang);

@@ -17,3 +17,15 @@ Label / Events / Crew / Sound / Contact
 
 Přepínač CZ / EN je nahoře vpravo.
 index.html automaticky otevře label.html.
+
+
+SEO added:
+- meta description
+- meta keywords
+- Open Graph tags
+- Twitter card
+- canonical URLs
+- favicon reference
+- robots.txt
+- sitemap.xml
+- assets/img/yaman-og.jpg
