@@ -1091,3 +1091,68 @@ img[src*="hauntedvila-poster"] {
 img[src*="hauntedvila-poster"] {
   background: #050505;
 }
+
+
+/* V16 — event flyers as vertical 3:4 poster cards */
+.events-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 460px));
+  gap: 34px;
+  margin-top: 54px;
+  align-items: start;
+}
+
+.event-poster-card {
+  width: 100%;
+}
+
+.event-poster-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto !important;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background: #050508;
+}
+
+.event-placeholder-card img {
+  opacity: 0.55;
+  background: #050508;
+}
+
+@media (max-width: 900px) {
+  .events-poster-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* V17 hard fix — HauntedVila flyer portrait cards */
+.events-poster-grid,
+.events-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(280px, 460px)) !important;
+  gap: 34px !important;
+  align-items: start !important;
+}
+
+.event-poster-card img,
+.event-card img,
+.hauntedvila-flyer,
+img[src*="hauntedvila-final-2026"] {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3 / 4 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  background: #050508 !important;
+}
+
+@media (max-width: 900px) {
+  .events-poster-grid,
+  .events-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
