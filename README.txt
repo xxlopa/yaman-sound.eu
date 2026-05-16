@@ -40,3 +40,10 @@ V14 SEO/WebP update:
 - Added JSON-LD MusicEvent schema for HauntedVila
 - Added JSON-LD Person schema on artist pages
 - Kept favicon.png for browser compatibility
+
+
+V19 cache-busting update:
+- Added ?v=19 to CSS links
+- Added ?v=19 to JS links
+- Added ?v=19 to local image references
+- Helps Safari, GitHub Pages and Cloudflare load fresh assets after updates.
