@@ -47,3 +47,12 @@ V19 cache-busting update:
 - Added ?v=19 to JS links
 - Added ?v=19 to local image references
 - Helps Safari, GitHub Pages and Cloudflare load fresh assets after updates.
+
+
+V20 industrial redesign:
+- Added HauntedVila Warm-up Cross Club event
+- Replaced Basement Ritual with new Warm-up event
+- Converted new flyer to WebP
+- Redesigned events page in dark industrial poster-card style
+- Added orange ritual accents and stronger global visual polish
+- Updated cache-busting to ?v=20
