@@ -1,0 +1,180 @@
+
+/* V24 reference-style redesign override, built from uploaded yamanweb.zip */
+:root{
+  --y-bg:#050505;
+  --y-panel:#111111;
+  --y-panel-2:#171717;
+  --y-text:#f4f4f4;
+  --y-muted:#b9b9b9;
+  --y-orange:#ff7a1f;
+  --y-orange-soft:rgba(255,122,31,.14);
+  --y-line:rgba(255,255,255,.09);
+  --y-line-orange:rgba(255,122,31,.35);
+}
+html,body{background:#050505!important;color:var(--y-text)!important;}
+body{
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,122,31,.08), transparent 28%),
+    radial-gradient(circle at 12% 20%, rgba(255,122,31,.05), transparent 24%),
+    #050505!important;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.17;
+  z-index:-1;
+  background-image:
+    radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+  background-size:4px 4px;
+  mask-image:linear-gradient(90deg, black, transparent 72%);
+}
+.site-header{
+  position:sticky!important;
+  top:0!important;
+  z-index:999!important;
+  background:rgba(0,0,0,.94)!important;
+  border-bottom:1px solid var(--y-line)!important;
+  backdrop-filter:blur(18px)!important;
+  padding:18px clamp(22px,4vw,56px)!important;
+}
+.site-header .container,.header-inner,.nav-wrap{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:34px!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.logo{flex:0 0 auto!important;}
+.logo img{max-width:178px!important;height:auto!important;}
+.nav{
+  flex:1 1 auto!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:clamp(18px,3vw,42px)!important;
+}
+.nav a{
+  position:relative!important;
+  padding:10px 0 12px!important;
+  color:#fff!important;
+  font-size:.88rem!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  letter-spacing:.08em!important;
+  text-decoration:none!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:var(--y-orange);
+  transition:width .22s ease;
+}
+.nav a:hover::after,.nav a.active::after{width:100%;}
+.lang-toggle{margin-left:18px!important;border-left:1px solid var(--y-line)!important;padding-left:22px!important;}
+.lang-toggle button{
+  border-radius:999px!important;
+  border:1px solid transparent!important;
+  background:transparent!important;
+  color:#fff!important;
+  font-weight:900!important;
+}
+.lang-toggle button.active{border-color:var(--y-line-orange)!important;background:var(--y-orange-soft)!important;}
+.page{padding-top:clamp(58px,7vw,96px)!important;}
+.container{width:min(1220px,calc(100% - 42px))!important;}
+.eyebrow,.section-subtitle{
+  color:var(--y-orange)!important;
+  text-transform:uppercase!important;
+  letter-spacing:.22em!important;
+  font-weight:900!important;
+}
+.page-title,.hero-title{
+  font-size:clamp(4.2rem,10vw,8.4rem)!important;
+  line-height:.86!important;
+  letter-spacing:-.055em!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+  color:#fff!important;
+  margin:0 0 18px!important;
+}
+.lead{
+  color:#cfcfcf!important;
+  line-height:1.7!important;
+  max-width:760px!important;
+}
+.events-page .eyebrow,.events-page .lead{text-align:center!important;margin-inline:auto!important;}
+.events-poster-grid,.events-grid,.ritual-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(300px,370px))!important;
+  justify-content:center!important;
+  gap:28px!important;
+  margin-top:clamp(36px,5vw,58px)!important;
+}
+.card,.event-card,.event-poster-card,.roster-card{
+  background:linear-gradient(180deg,var(--y-panel-2),#090909)!important;
+  border:1px solid var(--y-line)!important;
+  border-radius:16px!important;
+  overflow:hidden!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.46)!important;
+}
+.card:hover,.event-card:hover,.event-poster-card:hover,.roster-card:hover{
+  transform:translateY(-5px)!important;
+  border-color:var(--y-line-orange)!important;
+  box-shadow:0 26px 80px rgba(0,0,0,.55)!important;
+}
+.event-flyer,.event-card img,.event-poster-card img,img[src*="hauntedvila"]{
+  width:100%!important;
+  aspect-ratio:3/4!important;
+  height:auto!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  display:block!important;
+  background:#060606!important;
+}
+.card-content,.event-content{padding:22px!important;}
+.card h3,.event-card h3,.event-poster-card h3{
+  color:#fff!important;
+  text-transform:uppercase!important;
+  font-size:1.32rem!important;
+  letter-spacing:-.02em!important;
+}
+.event-kicker,.event-meta span:first-child{color:var(--y-orange)!important;}
+.event-meta{
+  display:grid!important;
+  gap:7px!important;
+  color:#d8d8d8!important;
+  text-transform:uppercase!important;
+  letter-spacing:.08em!important;
+  font-weight:900!important;
+}
+.btn,.button-row a,button,.open-profile{
+  border:1px solid var(--y-line-orange)!important;
+  background:transparent!important;
+  color:#fff!important;
+  border-radius:8px!important;
+  text-transform:uppercase!important;
+  letter-spacing:.12em!important;
+  font-weight:900!important;
+}
+.btn:hover,.button-row a:hover,button:hover,.open-profile:hover{
+  background:var(--y-orange)!important;
+  color:#090909!important;
+}
+.site-footer,footer{
+  background:#060606!important;
+  border-top:1px solid var(--y-line)!important;
+}
+@media(max-width:900px){
+  .site-header .container,.header-inner,.nav-wrap{flex-direction:column!important;gap:18px!important;}
+  .nav{flex-wrap:wrap!important;gap:16px!important;}
+  .page-title,.hero-title{font-size:clamp(3.2rem,16vw,5.6rem)!important;}
+}
