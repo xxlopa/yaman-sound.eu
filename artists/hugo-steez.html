@@ -21,8 +21,8 @@
   <link rel="canonical" href="https://yamansound.eu/artists/hugo-steez.html">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
-  <link rel="stylesheet" href="../assets/css/style.css?v=19" />
-  <script defer src="../assets/js/lang.js?v=19"></script>
+  <link rel="stylesheet" href="../assets/css/style.css?v=22" />
+  <script defer src="../assets/js/lang.js?v=22"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,18 +76,24 @@
 </head>
 <body>
   <header class="site-header">
-  <a class="logo" href="../label.html"><img src="../assets/img/yaman-recordings-logo.webp?v=19" alt="YAMAN Recordings logo"></a>
+  <a class="logo" href="../index.html"><img src="../assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
   <div class="nav-wrap">
-    <nav class="nav">
-      <a href="../label.html" >Label</a>
-      <a href="../events.html" >Events</a>
+    <nav class="nav" aria-label="Main menu">
+      <a href="../index.html" class="">Home</a>
+      <a href="../events.html" class="">Events</a>
       <a href="../crew.html" class="active">Crew</a>
-      <a href="../sound.html" >Sound</a>
-      <a href="../contact.html" >Contact</a>
+      <a href="../sound.html" class="">Sound</a>
+      <a href="../newsletter.html" class="">Newsletter</a>
+      <a href="../contact.html" class="">Contact</a>
     </nav>
     <div class="lang-toggle" aria-label="Language switch">
       <button type="button" data-lang-button="cs">CZ</button>
       <button type="button" data-lang-button="en">EN</button>
+    </div>
+    <div class="top-socials" aria-label="Social links">
+      <a href="https://instagram.com/yaman__events" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/icons/instagram.webp" alt="Instagram"></a>
+      <a href="https://soundcloud.com/yaman_recordings" target="_blank" rel="noopener" aria-label="SoundCloud"><img src="../assets/icons/soundcloud.webp" alt="SoundCloud"></a>
+      <a href="https://www.youtube.com/@yaman_recordings" target="_blank" rel="noopener" aria-label="YouTube"><img src="../assets/icons/youtube.webp" alt="YouTube"></a>
     </div>
   </div>
 </header>
@@ -117,8 +123,20 @@
   </main>
 
   <footer class="site-footer">
-    <span class="cs">© 2026 YAMAN Sound — Neurofunk Drum & Bass Label</span>
-    <span class="en">© 2026 YAMAN Sound — Neurofunk Drum & Bass Label</span>
-  </footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="../index.html"><img src="../assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
+    <p><span class="cs">YAMAN SOUND je neurofunk & dark DnB movement z Prahy. Events, crew, music & underground culture.</span><span class="en">YAMAN SOUND is a neurofunk & dark DnB movement based in Prague. Events, crew, music & underground culture.</span></p>
+    <nav class="footer-nav"><a href="../index.html">Home</a><a href="../events.html">Events</a><a href="../crew.html">Crew</a><a href="../label.html">Label</a><a href="../sound.html">Sound</a><a href="../contact.html">Contact</a></nav>
+    <form class="footer-newsletter newsletter-form" action="https://formsubmit.co/label@yamansound.eu" method="POST">
+      <input type="hidden" name="_subject" value="New YAMAN Newsletter signup">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="email" name="email" placeholder="YAMAN newsletter email" required aria-label="Newsletter email">
+      <button type="submit">Join</button>
+    </form>
+    <div class="footer-socials"><a href="https://instagram.com/yaman__events" target="_blank" rel="noopener"><img src="../assets/icons/instagram.webp" alt="Instagram"></a><a href="https://soundcloud.com/yaman_recordings" target="_blank" rel="noopener"><img src="../assets/icons/soundcloud.webp" alt="SoundCloud"></a><a href="https://www.youtube.com/@yaman_recordings" target="_blank" rel="noopener"><img src="../assets/icons/youtube.webp" alt="YouTube"></a></div>
+  </div>
+  <small>© 2026 YAMAN SOUND. ALL RIGHTS RESERVED.</small>
+</footer>
 </body>
 </html>
