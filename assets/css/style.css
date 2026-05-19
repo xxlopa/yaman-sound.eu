@@ -1243,3 +1243,9 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 
 /* v4 HauntedVila update */
 .events-poster-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:960px;margin-left:auto;margin-right:auto}.featured-event{box-shadow:0 0 0 1px rgba(255,106,0,.38),0 26px 90px rgba(255,96,0,.13)!important}.detail-copy .lead{font-size:1.05rem!important;line-height:1.55!important}.lineup-list{margin-top:28px;padding:22px;border:1px solid rgba(255,106,0,.32);background:rgba(255,106,0,.045)}.lineup-list h3{color:var(--accent);margin:18px 0 8px;font-family:Rajdhani,Arial,sans-serif;letter-spacing:.12em}.lineup-list h3:first-child{margin-top:0}.lineup-list p{margin:4px 0;color:#e7e2dc;font-weight:700;letter-spacing:.02em}.sound-feature-grid{grid-template-columns:minmax(0,1fr) minmax(320px,420px)!important;align-items:start!important}.sound-video-card,.sound-post-inline{min-height:0!important}.sound-video-card .card-content p,.label-post-card .card-content p{line-height:1.35!important;margin-top:8px!important}.compact-video{max-height:360px!important}.home-title-small{font-size:clamp(2.4rem,4.2vw,4.4rem)!important}@media(max-width:900px){.events-poster-grid,.sound-feature-grid{grid-template-columns:1fr!important;max-width:560px}.page-title{font-size:clamp(3.2rem,14vw,5.8rem)!important}.detail-copy .page-title{text-align:center}.detail-copy .eyebrow{text-align:center}.detail-copy .lead{text-align:center!important}}
+
+/* Final polish fixes */
+.home-cards{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1180px!important;}
+.events-page .lead,.label-page .lead{margin-top:8px!important;}
+@media(max-width:1100px){.home-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:700px){.home-cards{grid-template-columns:1fr!important;}}
