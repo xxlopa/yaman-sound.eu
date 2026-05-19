@@ -1249,3 +1249,20 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 .events-page .lead,.label-page .lead{margin-top:8px!important;}
 @media(max-width:1100px){.home-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
 @media(max-width:700px){.home-cards{grid-template-columns:1fr!important;}}
+
+
+/* FINAL FIXES 2026-05-19 */
+.home-hero-clean .page-title, .no-big-title .page-title{display:none!important;}
+.home-hero-clean{padding-top:34px;}
+.home-hero-clean .lead{margin-top:10px!important;}
+.events-poster-grid,.home-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1280px!important;margin-left:auto!important;margin-right:auto!important;gap:28px!important;}
+.home-cards .event-poster-card img{height:470px!important;object-fit:cover;object-position:top;}
+.events-poster-grid .event-poster-card img{height:520px!important;object-fit:cover;object-position:top;}
+.newsletter-hero{display:grid;grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr);gap:30px;align-items:center;}
+.newsletter-hero > .eyebrow,.newsletter-hero > .page-title,.newsletter-hero > .lead{display:none!important;}
+.newsletter-intro{border:1px solid rgba(255,106,0,.28);background:rgba(255,255,255,.035);padding:28px;border-radius:12px;}
+.newsletter-intro h2{font-size:clamp(2rem,4vw,4.2rem);line-height:.9;margin:0 0 14px;color:#fff;}
+.newsletter-intro p{color:#c9c9c3;line-height:1.5;}
+.newsletter-card{margin:0 auto!important;}
+.contact-box .lead{text-align:left!important;margin-left:0!important;}
+@media(max-width:1100px){.events-poster-grid,.home-cards,.newsletter-hero{grid-template-columns:1fr!important;max-width:560px!important}.home-cards .event-poster-card img,.events-poster-grid .event-poster-card img{height:auto!important;}.newsletter-card{grid-template-columns:1fr!important;}}
