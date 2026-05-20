@@ -55,3 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Newsletter status message from Netlify Function redirect
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get("newsletter");
+    if (!status) return;
+
+    const form = document.querySelector(".newsletter-form");
+    if (!form) return;
+
+    const message = document.createElement("p");
+    message.className = "newsletter-status newsletter-status-" + status;
+
+    const isCs = document.documentElement.getAttribute("data-lang") === "cs";
+    const texts = {
+      success: isCs ? "Hotovo — email byl přidán do YAMAN newsletteru." : "Done — your email was added to the YAMAN newsletter.",
+      invalid: isCs ? "Zadej prosím platný email." : "Please enter a valid email address.",
+      error: isCs ? "Něco se nepovedlo. Zkus to prosím znovu za chvíli." : "Something went wrong. Please try again in a moment."
+    };
+
+    message.textContent = texts[status] || texts.error;
+    form.insertAdjacentElement("afterend", message);
+
+    params.delete("newsletter");
+    const cleanUrl = window.location.pathname + (params.toString() ? "?" + params.toString() : "") + window.location.hash;
+    window.history.replaceState({}, "", cleanUrl);
+  });
+})();

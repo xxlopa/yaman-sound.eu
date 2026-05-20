@@ -26,7 +26,7 @@
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=40" />
+  <link rel="stylesheet" href="assets/css/style.css?v=41" />
   <script defer src="assets/js/lang.js?v=22"></script>
 <script type="application/ld+json">
 {
@@ -65,6 +65,8 @@
   <header class="site-header">
   <a class="logo" href="index.html"><img src="assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
   <div class="nav-wrap">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-hidden="true">
+    <label class="nav-toggle-label" for="nav-toggle" aria-label="Open menu">Menu</label>
     <nav class="nav" aria-label="Main menu">
       <a href="index.html" class="">Home</a>
       <a href="events.html" class="">Events</a>
@@ -85,53 +87,60 @@
   </div>
 </header>
   
-<main class="page">
+<main class="page contact-page">
   <div class="container">
     <p class="eyebrow">Contact</p>
 
-    <div class="grid three" style="margin-top:48px;">
-      <section class="contact-box">
-        <h3><a href="mailto:label@yamansound.eu">label@yamansound.eu</a></h3>
-        <p class="lead">
-          <span class="cs">Label collabs, demo submissions, press, stage design a technické dotazy.</span>
-          <span class="en">Label collabs, demo submissions, press, stage design and technical questions.</span>
-        </p>
-        <div class="socials">
-          <a href="https://www.instagram.com/yaman__events/" target="_blank">YAMAN Events IG</a>
-          <a href="https://www.instagram.com/yaman_recordings/" target="_blank">YAMAN Recordings IG</a>
-          <a href="https://www.facebook.com/yamanrecordings/" target="_blank">YAMAN FB</a>
-          <a href="https://www.facebook.com/yamanevent/" target="_blank">Events FB</a>
-          <a href="https://soundcloud.com/yaman_recordings" target="_blank">SoundCloud</a>
-          <a href="https://www.youtube.com/@yaman_recordings" target="_blank">YouTube</a>
+    <div class="contact-social-row" aria-label="YAMAN social links">
+      <a href="https://www.instagram.com/yaman__events/" target="_blank" rel="noopener"><img src="assets/icons/instagram.webp" alt="">YAMAN Events IG</a>
+      <a href="https://www.instagram.com/yaman_recordings/" target="_blank" rel="noopener"><img src="assets/icons/instagram.webp" alt="">YAMAN Recordings IG</a>
+      <a href="https://soundcloud.com/yaman_recordings" target="_blank" rel="noopener"><img src="assets/icons/soundcloud.webp" alt="">SoundCloud</a>
+      <a href="https://www.youtube.com/@yaman_recordings" target="_blank" rel="noopener"><img src="assets/icons/youtube.webp" alt="">YouTube</a>
+      <a href="https://www.facebook.com/yamanrecordings/" target="_blank" rel="noopener" class="facebook-social">Facebook</a>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-email-stack">
+        <section class="contact-box contact-email-item">
+          <span class="contact-mail-icon" aria-hidden="true">✉</span>
+          <div>
+            <h3><a href="mailto:label@yamansound.eu">label@yamansound.eu</a></h3>
+            <p class="lead">
+              <span class="cs">Label collabs, demo submissions, press, stage design a technické dotazy.</span>
+              <span class="en">Label collabs, demo submissions, press, stage design and technical questions.</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="contact-box contact-email-item">
+          <span class="contact-mail-icon" aria-hidden="true">✉</span>
+          <div>
+            <h3><a href="mailto:booking@yamansound.eu">booking@yamansound.eu</a></h3>
+            <p class="lead">
+              <span class="cs">Booking, spolupráce na akcích, line-up dotazy a booking poptávky.</span>
+              <span class="en">Booking, event collaborations, line-up enquiries and booking requests.</span>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <article class="card contact-crew-card">
+        <img src="assets/img/yaman-crew.webp?v=19" loading="lazy" alt="YAMAN SOUND Prague drum and bass collective crew photo" />
+        <div class="card-content">
+          <h3><span class="cs">YAMAN Sound</span><span class="en">YAMAN Sound</span></h3>
+          <p><span class="cs">Neurofunk drum & bass crew / label / event platform.</span><span class="en">Neurofunk drum & bass crew / label / event platform.</span></p>
         </div>
-      </section>
-
-      <section class="contact-box">
-        <h3><a href="mailto:booking@yamansound.eu">booking@yamansound.eu</a></h3>
-        <p class="lead">
-          <span class="cs">Booking, spolupráce na akcích, line-up dotazy a booking poptávky.</span>
-          <span class="en">Booking, event collaborations, line-up enquiries and booking requests.</span>
-        </p>
-      </section>
-
-      <article class="card ">
-  <img src="assets/img/yaman-crew.webp?v=19" loading="lazy" alt="YAMAN SOUND Prague drum and bass collective crew photo" />
-  <div class="card-content">
-    <h3><span class="cs">YAMAN Sound</span><span class="en">YAMAN Sound</span></h3>
-    <p><span class="cs">Neurofunk drum & bass crew / label / event platform.</span><span class="en">Neurofunk drum & bass crew / label / event platform.</span></p>
-    
-  </div>
-</article>
+      </article>
     </div>
   </div>
-<section class="container contact-newsletter"><div class="newsletter-card"><div><p class="eyebrow">YAMAN NEWSLETTER</p><h2><span class="cs">Přihlášení k newsletteru</span><span class="en">Newsletter signup</span></h2><p><span class="cs">Tracky, eventy a label novinky přímo do inboxu.</span><span class="en">Tracks, events and label news straight to your inbox.</span></p></div><form class="newsletter-form big" action="https://formsubmit.co/label@yamansound.eu" method="POST"><input type="hidden" name="_subject" value="New YAMAN Newsletter signup"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="box"><input type="hidden" name="source" value="YAMAN contact page"><input type="email" name="email" placeholder="your@email.com" required aria-label="Newsletter email"><button type="submit"><span class="cs">Přihlásit</span><span class="en">Join newsletter</span></button></form></div></section></main>
+<section class="container contact-newsletter"><div class="newsletter-card"><div><p class="eyebrow">YAMAN NEWSLETTER</p><h2><span class="cs">Přihlášení k newsletteru</span><span class="en">Newsletter signup</span></h2><p><span class="cs">Tracky, eventy a label novinky přímo do inboxu.</span><span class="en">Tracks, events and label news straight to your inbox.</span></p></div><form class="newsletter-form big" action="/.netlify/functions/subscribe" method="POST"><input type="hidden" name="_subject" value="New YAMAN Newsletter signup"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="box"><input type="hidden" name="source" value="YAMAN contact page"><input type="email" name="email" placeholder="your@email.com" required aria-label="Newsletter email"><button type="submit"><span class="cs">Přihlásit</span><span class="en">Join newsletter</span></button></form></div></section></main>
 
   <footer class="site-footer">
   <div class="footer-inner">
     <a class="footer-logo" href="index.html"><img src="assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
     <p><span class="cs">YAMAN SOUND je neurofunk & dark DnB movement z Prahy. Events, crew, music & underground culture.</span><span class="en">YAMAN SOUND is a neurofunk & dark DnB movement based in Prague. Events, crew, music & underground culture.</span></p>
     <nav class="footer-nav"><a href="index.html">Home</a><a href="events.html">Events</a><a href="crew.html">Crew</a><a href="sound.html">Sound</a><a href="media.html">Media</a><a href="contact.html">Contact</a></nav>
-    <form class="footer-newsletter newsletter-form" action="https://formsubmit.co/label@yamansound.eu" method="POST">
+    <form class="footer-newsletter newsletter-form" action="/.netlify/functions/subscribe" method="POST">
       <input type="hidden" name="_subject" value="New YAMAN Newsletter signup">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="box">
