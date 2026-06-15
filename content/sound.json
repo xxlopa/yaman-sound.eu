@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "visible": true,
+      "order": 10,
+      "label": "YAMAN RECORDINGS",
+      "title": "OPEN CALL / DEMO SUBMISSIONS",
+      "image": "/assets/img/yaman-recordings-open-call.webp?v=20",
+      "url": "label-open-call.html",
+      "text_cs": "Hledáme neurofunk a crossbreed artists s temným soundem a vlastním rukopisem.",
+      "text_en": "We are looking for neurofunk and crossbreed artists with a dark sound and their own identity."
+    },
+    {
+      "visible": true,
+      "order": 20,
+      "label": "NEW RELEASE",
+      "title": "DYLEMMA — GO HARD OR CRY",
+      "image": "/assets/img/dylemma-go-hard-or-cry.webp",
+      "url": "dylemma-go-hard-or-cry.html",
+      "text_cs": "První YAMAN release je venku — tvrdý neurofunk plný syrové energie.",
+      "text_en": "The first YAMAN release is out now — hard neurofunk loaded with raw energy."
+    }
+  ]
+}
