@@ -1816,3 +1816,49 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 }
 .newsletter-status-success{color:#ffffff!important;}
 .newsletter-status-invalid,.newsletter-status-error{color:var(--accent)!important;}
+
+
+/* Sound tiles final fix */
+.sound-page .sound-feature-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(280px,430px))!important;
+  justify-content:center!important;
+  align-items:start!important;
+  max-width:920px!important;
+  gap:28px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.sound-page .sound-post-inline{
+  width:100%!important;
+  aspect-ratio:auto!important;
+  display:block!important;
+  overflow:hidden!important;
+}
+.sound-page .sound-post-inline .event-card-link{
+  display:block!important;
+  height:auto!important;
+}
+.sound-page .sound-post-inline img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  flex:none!important;
+  min-height:0!important;
+  filter:contrast(1.08) brightness(.9)!important;
+}
+.sound-page .sound-post-inline .card-content{
+  padding:18px 20px 22px!important;
+}
+.sound-page .sound-post-inline .card-content p{
+  font-size:.98rem!important;
+  line-height:1.35!important;
+  margin:8px 0 0!important;
+}
+.sound-page .sound-post-inline .button-row{display:none!important;}
+@media(max-width:900px){
+  .sound-page .sound-feature-grid{grid-template-columns:1fr!important;max-width:430px!important;}
+}
