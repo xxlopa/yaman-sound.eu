@@ -1,0 +1,5 @@
+{% if site.data.site.newsletter_url and site.data.site.newsletter_url != '' %}
+  <a class="btn" href="{{ site.data.site.newsletter_url }}" target="_blank" rel="noopener"><span class="cs">Přihlásit</span><span class="en">Join newsletter</span></a>
+{% else %}
+  <a class="btn" href="{{ '/newsletter.html' | relative_url }}"><span class="cs">Newsletter</span><span class="en">Newsletter</span></a>
+{% endif %}

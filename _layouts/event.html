@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<main class="page detail-page">
+  <div class="container detail-grid">
+    <article class="detail-copy">
+      <p class="eyebrow">YAMAN EVENTS</p>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p class="lead"><span class="cs">{{ page.description_cs }}</span><span class="en">{{ page.description_en }}</span></p>
+
+      <div class="info-panel">
+        <h3>{{ page.date_display }} · {{ page.venue }}</h3>
+        {% if page.address %}<p>{{ page.address }}</p>{% endif %}
+        {% if page.extra_info_cs or page.extra_info_en %}<p><span class="cs">{{ page.extra_info_cs }}</span><span class="en">{{ page.extra_info_en }}</span></p>{% endif %}
+        <div class="button-row">
+          {% if page.ticket_url %}<a class="btn" href="{{ page.ticket_url }}" target="_blank" rel="noopener">{{ page.ticket_label | default: 'Tickets / GoOut' }}</a>{% endif %}
+          {% if page.facebook %}<a class="btn secondary" href="{{ page.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+          {% if page.instagram %}<a class="btn secondary" href="{{ page.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+          <a class="btn secondary" href="{{ '/events.html' | relative_url }}"><span class="cs">Zpět na events</span><span class="en">Back to events</span></a>
+        </div>
+      </div>
+
+      {% if page.lineup_headliners and page.lineup_headliners.size > 0 %}
+      <div class="lineup-list">
+        <h3>HEADLINERS</h3>
+        {% for act in page.lineup_headliners %}<p>■ {{ act }}</p>{% endfor %}
+        {% if page.lineup_supporting and page.lineup_supporting.size > 0 %}
+        <h3>SUPPORTING</h3>
+        {% for act in page.lineup_supporting %}<p>■ {{ act }}</p>{% endfor %}
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if page.body_cs or page.body_en %}
+      <div class="lead"><span class="cs">{{ page.body_cs | markdownify }}</span><span class="en">{{ page.body_en | markdownify }}</span></div>
+      {% endif %}
+    </article>
+    <aside class="card detail-poster"><img src="{{ page.image | relative_url }}" loading="lazy" alt="{{ page.title | escape }} flyer"></aside>
+  </div>
+</main>

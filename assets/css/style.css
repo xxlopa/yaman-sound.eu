@@ -1862,3 +1862,8 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 @media(max-width:900px){
   .sound-page .sound-feature-grid{grid-template-columns:1fr!important;max-width:430px!important;}
 }
+
+
+/* CMS migration helpers */
+.footer-newsletter .btn{display:inline-flex;align-items:center;justify-content:center;}
+.event-newsletter-card .card-content{min-height:100%;display:flex;flex-direction:column;justify-content:center;}

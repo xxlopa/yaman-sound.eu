@@ -1,39 +1,22 @@
-<!DOCTYPE html><html lang="cs" data-lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YAMAN SOUND</title><meta name="description" content="YAMAN Sound — Prague underground neurofunk and dark DnB."><link rel="icon" type="image/png" href="assets/img/favicon.png"><link rel="stylesheet" href="assets/css/style.css?v=40"><script defer src="assets/js/lang.js?v=22"></script></head><body><header class="site-header">
-  <a class="logo" href="index.html"><img src="assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
-  <div class="nav-wrap">
-    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-hidden="true">
-    <label class="nav-toggle-label" for="nav-toggle" aria-label="Open menu">Menu</label>
-    <nav class="nav" aria-label="Main menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="events.html" class="">Events</a>
-      <a href="crew.html" class="">Crew</a>
-      <a href="sound.html" class="">Sound</a>
-      <a href="media.html" class="">Media</a>
-      <a href="contact.html" class="">Contact</a>
-    </nav>
-    <div class="lang-toggle" aria-label="Language switch">
-      <button type="button" data-lang-button="cs">CZ</button>
-      <button type="button" data-lang-button="en">EN</button>
-    </div>
-    <div class="top-socials" aria-label="Social links">
-      <a href="https://instagram.com/yaman__events" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icons/instagram.webp" alt="Instagram"></a>
-      <a href="https://soundcloud.com/yaman_recordings" target="_blank" rel="noopener" aria-label="SoundCloud"><img src="assets/icons/soundcloud.webp" alt="SoundCloud"></a>
-      <a href="https://www.youtube.com/@yaman_recordings" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/icons/youtube.webp" alt="YouTube"></a>
+---
+layout: default
+nav: home
+title: Home
+permalink: /index.html
+---
+<main class="page home-page home-hero-clean">
+  <div class="container">
+    <p class="eyebrow">YAMAN SOUND</p>
+    <h1 class="page-title home-title-small">YAMAN SOUND</h1>
+    <p class="lead"><span class="cs">{{ site.data.site.home_intro_cs }}</span><span class="en">{{ site.data.site.home_intro_en }}</span></p>
+    <div class="events-poster-grid home-cards">
+      {% assign featured_events = site.events | where: 'published', true | where: 'featured', true | sort: 'date' %}
+      {% for event in featured_events limit:2 %}
+      <article class="card event-poster-card{% if forloop.first %} featured-event{% endif %}"><a class="event-card-link" href="{{ event.url | relative_url }}"><img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"><div class="card-content"><h3>{{ event.title }}</h3><p>{{ event.date_display }} · {{ event.venue }}</p></div></a></article>
+      {% endfor %}
+      {% assign featured_sound = site.sound_posts | where: 'published', true | where: 'featured', true | first %}
+      {% if featured_sound %}<article class="card event-poster-card"><a class="event-card-link" href="{{ featured_sound.url | relative_url }}"><img src="{{ featured_sound.image | relative_url }}" loading="lazy" alt="{{ featured_sound.title | escape }}"><div class="card-content"><h3>{{ featured_sound.title }}</h3><p><span class="cs">{{ featured_sound.summary_cs }}</span><span class="en">{{ featured_sound.summary_en }}</span></p></div></a></article>{% endif %}
     </div>
   </div>
-</header><main class="page home-page home-hero-clean"><div class="container"><p class="eyebrow">YAMAN SOUND</p><h1 class="page-title home-title-small">YAMAN SOUND</h1><p class="lead"><span class="cs">Pražský underground movement pro neurofunk, dark DnB, events, crew a YAMAN Recordings.</span><span class="en">Prague underground movement for neurofunk, dark DnB, events, crew and YAMAN Recordings.</span></p><div class="events-poster-grid home-cards"><article class="card event-poster-card"><a class="event-card-link" href="hauntedvila-day-night.html"><img src="assets/img/hauntedvila-day-night-2026.webp?v=30" alt="Hauntedvila Day & Night flyer"><div class="card-content"><h3>HAUNTEDVILA DAY & NIGHT</h3><p>27. 6. 2026 · Vila Štvanice</p></div></a></article><article class="card event-poster-card"><a class="event-card-link" href="hauntedvila-warm-up.html"><img src="assets/img/hauntedvila-warmup-2026.webp?v=21" alt="Hauntedvila Warm-up flyer"><div class="card-content"><h3>WARM-UP</h3><p>5. 6. 2026 · Cross Club</p></div></a></article><article class="card event-poster-card"><a class="event-card-link" href="sound.html"><img src="assets/img/yaman-recordings-open-call.webp?v=20" alt="YAMAN Recordings"><div class="card-content"><h3>SOUND</h3><p>Forward-thinking Drum & Bass platform.</p></div></a></article></div></div><section class="container home-newsletter"><div class="newsletter-card"><div><p class="eyebrow">YAMAN NEWSLETTER</p><h2><span class="cs">Tracky, novinky a eventy</span><span class="en">Tracks, news and events</span></h2><p><span class="cs">Přihlaš se a dostávej YAMAN updates do mailu.</span><span class="en">Sign up for YAMAN updates in your inbox.</span></p></div><form class="newsletter-form big" action="/.netlify/functions/subscribe" method="POST"><input type="hidden" name="_subject" value="New YAMAN Newsletter signup"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="box"><input type="hidden" name="source" value="YAMAN homepage"><input type="email" name="email" placeholder="your@email.com" required aria-label="Newsletter email"><button type="submit"><span class="cs">Přihlásit</span><span class="en">Join newsletter</span></button></form></div></section></main><footer class="site-footer">
-  <div class="footer-inner">
-    <a class="footer-logo" href="index.html"><img src="assets/img/yaman-recordings-logo.webp?v=20" alt="YAMAN Sound logo"></a>
-    <p><span class="cs">YAMAN SOUND je neurofunk & dark DnB movement z Prahy. Events, crew, music & underground culture.</span><span class="en">YAMAN SOUND is a neurofunk & dark DnB movement based in Prague. Events, crew, music & underground culture.</span></p>
-    <nav class="footer-nav"><a href="index.html">Home</a><a href="events.html">Events</a><a href="crew.html">Crew</a><a href="sound.html">Sound</a><a href="media.html">Media</a><a href="contact.html">Contact</a></nav>
-    <form class="footer-newsletter newsletter-form" action="/.netlify/functions/subscribe" method="POST">
-      <input type="hidden" name="_subject" value="New YAMAN Newsletter signup">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
-      <input type="email" name="email" placeholder="YAMAN newsletter email" required aria-label="Newsletter email">
-      <button type="submit">Join</button>
-    </form>
-    <div class="footer-socials"><a href="https://instagram.com/yaman__events" target="_blank" rel="noopener"><img src="assets/icons/instagram.webp" alt="Instagram"></a><a href="https://soundcloud.com/yaman_recordings" target="_blank" rel="noopener"><img src="assets/icons/soundcloud.webp" alt="SoundCloud"></a><a href="https://www.youtube.com/@yaman_recordings" target="_blank" rel="noopener"><img src="assets/icons/youtube.webp" alt="YouTube"></a></div>
-  </div>
-  <small>© 2026 YAMAN SOUND. ALL RIGHTS RESERVED.</small>
-</footer></body></html>
+  <section class="container home-newsletter"><div class="newsletter-card"><div><p class="eyebrow">YAMAN NEWSLETTER</p><h2><span class="cs">Tracky, novinky a eventy</span><span class="en">Tracks, news and events</span></h2><p><span class="cs">Přihlaš se a dostávej YAMAN updates do mailu.</span><span class="en">Sign up for YAMAN updates in your inbox.</span></p></div>{% include newsletter-cta.html %}</div></section>
+</main>

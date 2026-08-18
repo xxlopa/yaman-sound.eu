@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<main class="page artist-page">
+  <div class="container artist-detail">
+    <a class="back-link" href="{{ '/crew.html' | relative_url }}"><span class="cs">← Zpět na crew</span><span class="en">← Back to crew</span></a>
+    <div class="artist-detail-grid">
+      <article class="card artist-detail-image"><img src="{{ page.image | relative_url }}" loading="lazy" alt="{{ page.title | escape }} — {{ page.role | escape }}"></article>
+      <section class="artist-detail-copy">
+        <p class="eyebrow">{{ page.role }}</p>
+        <h1 class="page-title">{{ page.title }}</h1>
+        <p class="lead"><span class="cs">{{ page.bio_cs }}</span><span class="en">{{ page.bio_en }}</span></p>
+        <div class="socials artist-socials">
+          {% if page.instagram %}<a href="{{ page.instagram }}" target="_blank" rel="noreferrer">Instagram</a>{% endif %}
+          {% if page.facebook %}<a href="{{ page.facebook }}" target="_blank" rel="noreferrer">Facebook</a>{% endif %}
+          {% if page.soundcloud %}<a href="{{ page.soundcloud }}" target="_blank" rel="noreferrer">SoundCloud</a>{% endif %}
+          {% if page.youtube %}<a href="{{ page.youtube }}" target="_blank" rel="noreferrer">YouTube</a>{% endif %}
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
