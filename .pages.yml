@@ -14,3 +14,162 @@ content:
     filename:
       template: "{title}.md"
       field: create
+    view:
+      fields: [title, date, status, featured, published]
+      primary: title
+      sort: [date, title]
+      search: [title, venue]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, label: Event title, type: string, required: true }
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options: { format: yyyy-MM-dd }
+      - { name: date_display, label: Date shown on site, type: string, description: "Example: 03. 10. 2026", required: true }
+      - { name: venue, label: Venue, type: string, required: true }
+      - { name: city, label: City, type: string, default: Prague }
+      - { name: address, label: Address, type: string }
+      - name: image
+        label: Flyer
+        type: image
+        required: true
+        options: { media: images, path: events, rename: safe }
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: upcoming
+        options:
+          values:
+            - { name: upcoming, label: Upcoming }
+            - { name: past, label: Past }
+      - { name: featured, label: Show on homepage, type: boolean, default: false }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: summary_cs, label: Card text CZ, type: text, required: true }
+      - { name: summary_en, label: Card text EN, type: text, required: true }
+      - { name: description_cs, label: Detail description CZ, type: text, required: true }
+      - { name: description_en, label: Detail description EN, type: text, required: true }
+      - { name: extra_info_cs, label: Extra info CZ, type: text }
+      - { name: extra_info_en, label: Extra info EN, type: text }
+      - { name: ticket_url, label: GoOut / tickets URL, type: string }
+      - { name: ticket_label, label: Ticket button label, type: string, default: "Tickets / GoOut" }
+      - { name: facebook, label: Facebook event URL, type: string }
+      - { name: instagram, label: Instagram post URL, type: string }
+      - name: lineup_headliners
+        label: Headliners
+        type: string
+        list: true
+      - name: lineup_supporting
+        label: Supporting lineup
+        type: string
+        list: true
+
+  - name: crew
+    label: Crew
+    type: collection
+    path: _crew
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, role, order, published]
+      primary: title
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Artist name, type: string, required: true }
+      - { name: order, label: Position/order, type: number, required: true }
+      - { name: role, label: Role, type: string, required: true }
+      - name: image
+        label: Photo
+        type: image
+        required: true
+        options: { media: images, path: crew, rename: safe }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: preview_cs, label: Card text CZ, type: text, required: true }
+      - { name: preview_en, label: Card text EN, type: text, required: true }
+      - { name: bio_cs, label: Bio CZ, type: text, required: true }
+      - { name: bio_en, label: Bio EN, type: text, required: true }
+      - { name: instagram, label: Instagram URL, type: string }
+      - { name: facebook, label: Facebook URL, type: string }
+      - { name: soundcloud, label: SoundCloud URL, type: string }
+      - { name: youtube, label: YouTube URL, type: string }
+
+  - name: sound_posts
+    label: Sound / Releases
+    type: collection
+    path: _sound_posts
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, role, order, featured, published]
+      primary: title
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: order, label: Position/order, type: number, required: true }
+      - { name: role, label: Label above title, type: string, default: "NEW RELEASE" }
+      - name: image
+        label: Cover / image
+        type: image
+        required: true
+        options: { media: images, path: sound, rename: safe }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: featured, label: Show on homepage, type: boolean, default: false }
+      - { name: summary_cs, label: Card text CZ, type: text, required: true }
+      - { name: summary_en, label: Card text EN, type: text, required: true }
+      - { name: description_cs, label: Detail text CZ, type: text, required: true }
+      - { name: description_en, label: Detail text EN, type: text, required: true }
+      - { name: primary_url, label: Main link URL, type: string }
+      - { name: primary_label, label: Main button label, type: string }
+      - { name: secondary_url, label: Secondary link URL, type: string }
+      - { name: secondary_label, label: Secondary button label, type: string }
+
+  - name: media_posts
+    label: Media / Videosets
+    type: collection
+    path: _media_posts
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, role, order, published]
+      primary: title
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: order, label: Position/order, type: number, required: true }
+      - { name: role, label: Type, type: string, default: Videoset }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: youtube_embed_url, label: YouTube embed URL, type: string, required: true, description: "Example: https://www.youtube.com/embed/VIDEO_ID" }
+      - { name: description_cs, label: Description CZ, type: text, required: true }
+      - { name: description_en, label: Description EN, type: text, required: true }
+
+  - name: site_settings
+    label: Site settings
+    type: file
+    path: _data/site.yml
+    operations: { delete: false }
+    fields:
+      - { name: brand, label: Brand, type: string, readonly: true }
+      - { name: home_intro_cs, label: Homepage intro CZ, type: text }
+      - { name: home_intro_en, label: Homepage intro EN, type: text }
+      - { name: events_intro_cs, label: Events intro CZ, type: text }
+      - { name: events_intro_en, label: Events intro EN, type: text }
+      - { name: sound_intro_cs, label: Sound intro CZ, type: text }
+      - { name: sound_intro_en, label: Sound intro EN, type: text }
+      - { name: description_cs, label: Footer description CZ, type: text }
+      - { name: description_en, label: Footer description EN, type: text }
+      - { name: instagram_events, label: Instagram Events, type: string }
+      - { name: instagram_recordings, label: Instagram Recordings, type: string }
+      - { name: facebook, label: Facebook, type: string }
+      - { name: soundcloud, label: SoundCloud, type: string }
+      - { name: youtube, label: YouTube, type: string }
+      - { name: newsletter_url, label: Brevo public signup URL, type: string, description: "Leave blank until the Brevo signup form is connected." }
