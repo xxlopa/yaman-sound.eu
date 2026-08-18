@@ -1,6 +1,6 @@
 ---
 title: J.Cop
-order: 4
+order: 5
 role: LIGHT OPERATOR / DJ
 image: /assets/img/jcop.webp
 published: true
