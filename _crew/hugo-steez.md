@@ -1,6 +1,6 @@
 ---
 title: Hugo Steez
-order: 5
+order: 6
 role: Creative Designer / DJ
 image: /assets/img/hugo-steez.webp
 published: true
