@@ -1,0 +1,16 @@
+media:
+  - name: images
+    label: Images
+    input: assets/uploads
+    output: /assets/uploads
+    categories: [image]
+    rename: safe
+
+content:
+  - name: events
+    label: Events
+    type: collection
+    path: _events
+    filename:
+      template: "{title}.md"
+      field: create
