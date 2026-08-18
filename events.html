@@ -13,30 +13,7 @@ permalink: /events.html
       {% for event in upcoming %}
       <article class="card event-poster-card{% if event.featured %} featured-event{% endif %}"><a class="event-card-link" href="{{ event.url | relative_url }}" aria-label="Open {{ event.title | escape }}"><img class="hauntedvila-flyer" src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"><div class="card-content"><p class="role">{{ event.venue }}, {{ event.city | default: 'Prague' }}</p><h3>{{ event.title }}</h3><div class="event-meta"><span>{{ event.date_display }}</span><span>{{ event.venue }}</span></div><p><span class="cs">{{ event.summary_cs }}</span><span class="en">{{ event.summary_en }}</span></p><div class="button-row"><span class="btn ghost">View event ↗</span></div></div></a></article>
       {% endfor %}
-     <article class="card event-poster-card event-newsletter-card">
-  <a class="event-card-link" href="{{ '/newsletter.html' | relative_url }}">
-
-    <div class="newsletter-card-logo">
-      <img src="{{ '/assets/img/yaman-og.webp' | relative_url }}" alt="YAMAN">
-    </div>
-
-    <div class="card-content">
-      <p class="role">YAMAN NEWSLETTER</p>
-
-      <h3>STAY IN THE LOOP</h3>
-
-      <p>
-        <span class="cs">YAMAN newsletter je zpátky.</span>
-        <span class="en">The YAMAN newsletter is back.</span>
-      </p>
-
-      <div class="button-row">
-        <span class="btn ghost">Join newsletter ↗</span>
-      </div>
-    </div>
-
-  </a>
-</article>
+      <article class="card event-poster-card event-newsletter-card"><a class="event-card-link" href="{{ '/newsletter.html' | relative_url }}" aria-label="Open YAMAN newsletter"><img class="newsletter-poster-thumb" src="{{ site.data.site.newsletter_image | relative_url }}" loading="lazy" alt="YAMAN Newsletter — Stay in the Loop"><div class="card-content"><p class="role">YAMAN NEWSLETTER</p><h3>{{ site.data.site.newsletter_headline }}</h3><div class="event-meta"><span>Tracks</span><span>Events</span><span>Label news</span></div><p><span class="cs">{{ site.data.site.newsletter_text_cs }}</span><span class="en">{{ site.data.site.newsletter_text_en }}</span></p><div class="button-row"><span class="btn ghost">Join newsletter ↗</span></div></div></a></article>
     </div>
 
     {% assign past = site.events | where: 'published', true | where: 'status', 'past' | sort: 'date' | reverse %}

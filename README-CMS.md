@@ -63,3 +63,8 @@ Pokud budeš chtít formulář přímo vložený do stránky (ne jen odkaz), mů
 - Složky začínající `_` jsou Jekyll collections. GitHub Pages je při buildu převede na HTML.
 - Neukládej na web API klíč Breva ani jiný secret.
 - Obrázky nahrané přes Pages CMS se ukládají do `assets/uploads/`.
+
+
+## Newsletter / Brevo
+
+The newsletter is embedded directly on `/newsletter.html` and submits to Brevo without exposing an API key. In Pages CMS → Site settings you can change the newsletter poster, headline, CZ/EN text, and the public Brevo form action URL (`sibforms.com/serve/...`). The Events page newsletter tile uses the same poster.

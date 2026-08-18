@@ -1,14 +1,112 @@
 ---
 layout: default
-nav: media
+nav: newsletter
 title: Newsletter
 permalink: /newsletter.html
+image: /assets/uploads/newsletter/yaman-newsletter-stay-in-the-loop.webp
 ---
-<main class="page newsletter-page no-big-title">
-  <div class="container newsletter-hero">
-    <p class="eyebrow">YAMAN NEWSLETTER</p>
-    <h1 class="page-title"><span class="cs">TRACKY, NOVINKY &amp; EVENTY</span><span class="en">TRACKS, NEWS &amp; EVENTS</span></h1>
-    <p class="lead"><span class="cs">Přihlaš se k YAMAN newsletteru. Budeme posílat nové tracky, label news, eventy a underground updates bez spamu.</span><span class="en">Join the YAMAN newsletter for new tracks, label news, events and underground updates. No spam — just the next wave.</span></p>
-    <section class="newsletter-card"><div><h2><span class="cs">Zůstaň v pohybu</span><span class="en">Stay in the movement</span></h2>{% if site.data.site.newsletter_url and site.data.site.newsletter_url != '' %}<p><span class="cs">Přihlášení běží přes Brevo.</span><span class="en">Signup is handled by Brevo.</span></p>{% else %}<p><span class="cs">Brevo formulář ještě není připojený. V Pages CMS stačí později vložit jeho veřejnou signup URL do Site settings → Newsletter URL.</span><span class="en">The Brevo form is not connected yet. Later, paste its public signup URL into Pages CMS → Site settings → Newsletter URL.</span></p>{% endif %}</div>{% include newsletter-cta.html %}</section>
+<main class="page newsletter-page">
+  <div class="container">
+    <div class="newsletter-page-grid">
+
+      <div class="newsletter-page-poster">
+        <img src="{{ site.data.site.newsletter_image | relative_url }}" alt="YAMAN Newsletter — Stay in the Loop" loading="eager">
+      </div>
+
+      <section class="newsletter-signup-panel" aria-labelledby="newsletter-title">
+        <div class="newsletter-signal">YAMAN // SIGNAL</div>
+        <p class="eyebrow">YAMAN NEWSLETTER</p>
+        <h1 id="newsletter-title">{{ site.data.site.newsletter_headline }}</h1>
+        <p class="newsletter-lead">
+          <span class="cs">{{ site.data.site.newsletter_text_cs }}</span>
+          <span class="en">{{ site.data.site.newsletter_text_en }}</span>
+        </p>
+
+        <div class="sib-form yaman-brevo-shell">
+          <div id="sib-form-container" class="sib-form-container">
+
+            <div id="error-message" class="sib-form-message-panel yaman-form-message yaman-form-error" role="alert">
+              <span class="cs">Přihlášení se nepodařilo. Zkontroluj e-mail a zkus to znovu.</span>
+              <span class="en">Your subscription could not be saved. Check your email and try again.</span>
+            </div>
+
+            <div id="success-message" class="sib-form-message-panel yaman-form-message yaman-form-success" role="status">
+              <strong>YOU'RE IN.</strong>
+              <span class="cs">Vítej v YAMAN newsletteru.</span>
+              <span class="en">Welcome to the YAMAN newsletter.</span>
+            </div>
+
+            <div id="sib-container" class="sib-container--large sib-container--vertical yaman-sib-container">
+            <form
+              id="sib-form"
+              method="POST"
+              action="{{ site.data.site.newsletter_form_action }}"
+              data-type="subscription"
+              class="newsletter-form yaman-newsletter-form"
+            >
+              <div class="yaman-input-wrap">
+                <label for="EMAIL" class="yaman-email-label">EMAIL</label>
+                <div class="entry__field">
+                  <input
+                    class="input"
+                    type="email"
+                    id="EMAIL"
+                    name="EMAIL"
+                    autocomplete="email"
+                    value=""
+                    placeholder="YOUR@EMAIL.COM"
+                    data-required="true"
+                    required
+                  >
+                </div>
+                <label class="entry__error entry__error--primary yaman-field-error"></label>
+              </div>
+
+              <button
+                class="yaman-subscribe-button sib-form-block__button sib-form-block__button-with-loader"
+                form="sib-form"
+                type="submit"
+              >
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
+                </svg>
+                <span>JOIN NEWSLETTER →</span>
+              </button>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true">
+              <input type="hidden" name="locale" value="en">
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <p class="newsletter-privacy">
+          <span class="cs">Žádný spam. Jen YAMAN. Odhlásit se můžeš kdykoliv.</span>
+          <span class="en">No spam. Just YAMAN. Unsubscribe anytime.</span>
+        </p>
+      </section>
+
+    </div>
   </div>
 </main>
+
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Check your email address and try again.';
+  window.REQUIRED_ERROR_MESSAGE = 'Email is required.';
+  window.GENERIC_INVALID_MESSAGE = 'Check your email address and try again.';
+  window.INVALID_NUMBER = 'The information provided is invalid.';
+  window.INVALID_DATE = 'Please enter a valid date';
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected'
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>

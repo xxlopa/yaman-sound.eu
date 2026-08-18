@@ -1868,55 +1868,249 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 .footer-newsletter .btn{display:inline-flex;align-items:center;justify-content:center;}
 .event-newsletter-card .card-content{min-height:100%;display:flex;flex-direction:column;justify-content:center;}
 
-/* Equal height event + newsletter cards */
-.events-page .events-poster-grid {
-  align-items: stretch !important;
-}
 
-.events-page .event-poster-card {
-  height: 100% !important;
-}
+/* =========================================================
+   YAMAN NEWSLETTER — embedded Brevo + poster (2026-08-18)
+   ========================================================= */
 
-.events-page .event-card-link {
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
+/* Event newsletter card uses the same poster/card system as events */
+.event-newsletter-card .event-card-link{
+  display:flex!important;
+  flex-direction:column!important;
+  height:100%!important;
 }
-
-.events-page .event-newsletter-card {
-  min-height: 100% !important;
+.event-newsletter-card .newsletter-poster-thumb{
+  display:block!important;
+  width:100%!important;
+  height:520px!important;
+  object-fit:cover!important;
+  object-position:top center!important;
+  flex:none!important;
 }
-
-.events-page .event-newsletter-card .card-content {
-  flex: 1;
-  min-height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 42px 32px !important;
+.event-newsletter-card .card-content{
+  min-height:0!important;
+  flex:1 1 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
 }
+.event-newsletter-card .button-row{margin-top:auto!important;padding-top:14px!important;}
 
-.event-newsletter-card {
-  position: relative;
+/* Dedicated newsletter page */
+.newsletter-page{
+  padding-top:132px!important;
+  padding-bottom:88px!important;
+  min-height:100vh;
+}
+.newsletter-page-grid{
+  display:grid;
+  grid-template-columns:minmax(320px,.86fr) minmax(420px,1.14fr);
+  gap:30px;
+  align-items:stretch;
+  max-width:1080px;
+  margin:0 auto;
+}
+.newsletter-page-poster,
+.newsletter-signup-panel{
+  border:1px solid rgba(255,106,0,.34);
+  border-radius:10px;
+  overflow:hidden;
+  background:#090909;
+  box-shadow:0 28px 90px rgba(0,0,0,.62),0 0 45px rgba(255,106,0,.055);
+}
+.newsletter-page-poster img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:650px;
+  object-fit:cover;
+  object-position:center top;
+}
+.newsletter-signup-panel{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:52px 46px;
   background:
-    radial-gradient(circle at 50% 25%, rgba(255,106,0,.18), transparent 42%),
-    linear-gradient(180deg, #111 0%, #050505 100%) !important;
+    radial-gradient(circle at 92% 5%,rgba(255,106,0,.18),transparent 34%),
+    linear-gradient(145deg,rgba(255,106,0,.08),rgba(255,255,255,.028) 44%,rgba(0,0,0,.72));
+}
+.newsletter-signup-panel::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:128px;
+  height:3px;
+  background:var(--accent);
+  box-shadow:0 0 24px rgba(255,106,0,.72);
+}
+.newsletter-signal{
+  position:absolute;
+  top:19px;
+  right:22px;
+  color:rgba(255,255,255,.24);
+  font-family:Rajdhani,Arial,sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.22em;
+}
+.newsletter-signup-panel .eyebrow{
+  text-align:left!important;
+  margin:0 0 12px!important;
+  font-size:.94rem!important;
+}
+.newsletter-signup-panel h1{
+  margin:0;
+  color:#f7f7f3;
+  font-family:Rajdhani,Arial,sans-serif;
+  font-size:clamp(3.7rem,6vw,6.8rem);
+  line-height:.82;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+  text-shadow:0 22px 60px rgba(0,0,0,.7);
+}
+.newsletter-lead{
+  margin:24px 0 0!important;
+  max-width:560px;
+  color:#c8c8c2!important;
+  font-size:1.05rem!important;
+  line-height:1.6!important;
+}
+.yaman-brevo-shell{margin-top:36px;}
+.yaman-newsletter-form{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:12px!important;
+  align-items:end!important;
+  margin:0!important;
+}
+.yaman-input-wrap{min-width:0;}
+.yaman-email-label{
+  display:block;
+  margin:0 0 9px 2px;
+  color:var(--accent);
+  font-family:Rajdhani,Arial,sans-serif;
+  font-size:.73rem;
+  font-weight:800;
+  letter-spacing:.2em;
+}
+.yaman-newsletter-form input[type=email]{
+  box-sizing:border-box!important;
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  height:58px!important;
+  padding:0 17px!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  border-radius:0!important;
+  outline:none!important;
+  background:#030303!important;
+  color:#fff!important;
+  font-family:"Space Grotesk",Arial,sans-serif!important;
+  font-size:1rem!important;
+  box-shadow:none!important;
+}
+.yaman-newsletter-form input[type=email]::placeholder{
+  color:rgba(255,255,255,.33)!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-weight:700!important;
+  letter-spacing:.08em!important;
+}
+.yaman-newsletter-form input[type=email]:focus{
+  border-color:var(--accent)!important;
+  box-shadow:0 0 0 3px rgba(255,106,0,.09),0 0 30px rgba(255,106,0,.06)!important;
+}
+.yaman-subscribe-button{
+  box-sizing:border-box!important;
+  height:58px!important;
+  padding:0 25px!important;
+  border:1px solid var(--accent)!important;
+  border-radius:0!important;
+  background:var(--accent)!important;
+  color:#fff!important;
+  cursor:pointer!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:.9rem!important;
+  font-weight:900!important;
+  letter-spacing:.09em!important;
+  text-transform:uppercase!important;
+  white-space:nowrap!important;
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)!important;
+  transition:filter .2s ease,transform .2s ease,box-shadow .2s ease!important;
+}
+.yaman-subscribe-button:hover{
+  filter:brightness(1.12);
+  transform:translateY(-1px);
+  box-shadow:0 12px 34px rgba(255,106,0,.24)!important;
+}
+.yaman-subscribe-button .progress-indicator__icon{
+  width:16px!important;
+  height:16px!important;
+  margin-right:7px!important;
+  fill:currentColor!important;
+  vertical-align:middle!important;
+}
+.sib-hide-loader-icon{display:none!important;}
+.input--hidden{display:none!important;}
+.yaman-field-error{
+  display:block!important;
+  min-height:0!important;
+  margin:7px 0 0!important;
+  color:#ff784d!important;
+  background:transparent!important;
+  border:0!important;
+  font-family:"Space Grotesk",Arial,sans-serif!important;
+  font-size:.8rem!important;
+  line-height:1.35!important;
+}
+.sib-form-message-panel{display:none;}
+.sib-form-message-panel.sib-form-message-panel--active{display:block!important;}
+.yaman-form-message{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0 0 22px!important;
+  padding:16px 18px!important;
+  border:1px solid rgba(255,106,0,.46)!important;
+  border-radius:0!important;
+  background:rgba(255,106,0,.07)!important;
+  color:#fff!important;
+  font-family:"Space Grotesk",Arial,sans-serif!important;
+  font-size:.9rem!important;
+  line-height:1.5!important;
+  text-align:left!important;
+}
+.yaman-form-message strong{
+  display:block;
+  margin-bottom:2px;
+  color:var(--accent);
+  font-family:Rajdhani,Arial,sans-serif;
+  font-size:1.15rem;
+  letter-spacing:.1em;
+}
+.yaman-form-error{
+  border-color:rgba(255,86,45,.55)!important;
+  background:rgba(255,72,32,.07)!important;
+}
+.newsletter-privacy{
+  margin:18px 0 0!important;
+  color:#73736f!important;
+  font-size:.79rem!important;
+  line-height:1.45!important;
 }
 
-.newsletter-card-logo {
-  flex: 1;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 35px;
+@media(max-width:1100px){
+  .event-newsletter-card .newsletter-poster-thumb{height:auto!important;}
+  .newsletter-page-grid{grid-template-columns:1fr;max-width:620px;}
+  .newsletter-page-poster img{height:auto;min-height:0;aspect-ratio:3/4;}
 }
-
-.newsletter-card-logo img {
-  width: 75% !important;
-  height: auto !important;
-  aspect-ratio: auto !important;
-  object-fit: contain !important;
-  opacity: .85;
+@media(max-width:640px){
+  .newsletter-page{padding-top:104px!important;padding-bottom:56px!important;}
+  .newsletter-signup-panel{padding:42px 22px 30px;}
+  .newsletter-signup-panel h1{font-size:clamp(3.2rem,18vw,5.2rem);}
+  .newsletter-signal{display:none;}
+  .yaman-newsletter-form{grid-template-columns:1fr!important;}
+  .yaman-subscribe-button{width:100%!important;}
 }
