@@ -1896,3 +1896,27 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   justify-content: center;
   padding: 42px 32px !important;
 }
+
+.event-newsletter-card {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255,106,0,.18), transparent 42%),
+    linear-gradient(180deg, #111 0%, #050505 100%) !important;
+}
+
+.newsletter-card-logo {
+  flex: 1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+.newsletter-card-logo img {
+  width: 75% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  opacity: .85;
+}
