@@ -5,6 +5,8 @@ baseurl: ""
 lang: en
 markdown: kramdown
 
+future: true
+
 collections:
   events:
     output: true
