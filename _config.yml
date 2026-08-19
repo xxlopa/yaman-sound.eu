@@ -1,23 +1,27 @@
 title: YAMAN SOUND
-description: Prague underground neurofunk and dark DnB movement.
+description: Prague drum & bass events and YAMAN Recordings.
 url: https://yamansound.eu
 baseurl: ""
 lang: en
 markdown: kramdown
 
+# DŮLEŽITÉ:
+# umožní generovat stránky eventů s budoucím datem
 future: true
 
 collections:
   events:
     output: true
-    future: true
     permalink: /:name.html
+
   crew:
     output: true
     permalink: /artists/:name.html
+
   sound_posts:
     output: true
     permalink: /:name.html
+
   media_posts:
     output: false
 
@@ -28,12 +32,14 @@ defaults:
     values:
       layout: event
       nav: events
+
   - scope:
       path: ""
       type: crew
     values:
       layout: artist
       nav: crew
+
   - scope:
       path: ""
       type: sound_posts
