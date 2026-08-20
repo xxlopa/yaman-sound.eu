@@ -5,8 +5,9 @@ baseurl: ""
 lang: en
 markdown: kramdown
 
-# DŮLEŽITÉ:
-# umožní generovat stránky eventů s budoucím datem
+# Keep Jekyll permissive for any future-dated content.
+# Event dates themselves use `event_date`, so they are not treated as
+# Jekyll publishing dates and future event detail pages are always built.
 future: true
 
 collections:

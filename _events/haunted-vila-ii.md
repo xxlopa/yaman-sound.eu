@@ -1,6 +1,6 @@
 ---
 title: HAUNTED VILA II. — DAY & NIGHT
-date: '2026-10-03'
+event_date: '2026-10-03'
 date_display: 03. 10. 2026
 venue: Vila Štvanice
 city: Prague

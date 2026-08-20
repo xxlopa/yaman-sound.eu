@@ -1,6 +1,6 @@
 ---
 title: HAUNTEDVILA WARM-UP
-date: '2026-06-05'
+event_date: '2026-06-05'
 date_display: 5. 6. 2026
 venue: Cross Club
 city: Prague

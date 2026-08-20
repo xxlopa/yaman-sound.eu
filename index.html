@@ -10,7 +10,7 @@ permalink: /index.html
     <h1 class="page-title home-title-small">YAMAN SOUND</h1>
     <p class="lead"><span class="cs">{{ site.data.site.home_intro_cs }}</span><span class="en">{{ site.data.site.home_intro_en }}</span></p>
     <div class="events-poster-grid home-cards">
-      {% assign featured_events = site.events | where: 'published', true | where: 'featured', true | sort: 'date' %}
+      {% assign featured_events = site.events | where: 'published', true | where: 'featured', true | sort: 'event_date' %}
       {% for event in featured_events limit:2 %}
       <article class="card event-poster-card{% if forloop.first %} featured-event{% endif %}"><a class="event-card-link" href="{{ event.url | relative_url }}"><img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"><div class="card-content"><h3>{{ event.title }}</h3><p>{{ event.date_display }} · {{ event.venue }}</p></div></a></article>
       {% endfor %}

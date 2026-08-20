@@ -1,6 +1,6 @@
 ---
 title: HAUNTEDVILA DAY & NIGHT
-date: '2026-06-27'
+event_date: '2026-06-27'
 date_display: 27. 6. 2026
 venue: Vila Štvanice
 city: Prague
