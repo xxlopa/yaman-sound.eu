@@ -1,0 +1,17 @@
+<article class="card rental-card">
+  {% if include.item.image %}
+    <div class="rental-image-wrap"><img src="{{ include.item.image | relative_url }}" loading="lazy" alt="{{ include.item.title | escape }} rental"></div>
+  {% else %}
+    <div class="rental-image-placeholder" aria-label="Product photo can be added later">
+      <span class="rental-placeholder-mark">YAMAN</span>
+      <span class="rental-placeholder-copy"><span class="cs">FOTO DOPLNÍME</span><span class="en">PHOTO COMING</span></span>
+    </div>
+  {% endif %}
+  <div class="card-content">
+    <div class="rental-card-topline"><span class="rental-count">{{ include.item.quantity }}×</span><span class="rental-category">{% case include.item.category %}{% when 'dj_audio' %}DJ / AUDIO{% when 'control' %}CONTROL / DATA{% when 'lights' %}LIGHTS{% endcase %}</span></div>
+    <h3>{{ include.item.title }}</h3>
+    {% if include.item.description_cs or include.item.description_en %}
+      <p><span class="cs">{{ include.item.description_cs }}</span><span class="en">{{ include.item.description_en }}</span></p>
+    {% endif %}
+  </div>
+</article>

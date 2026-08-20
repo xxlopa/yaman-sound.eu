@@ -68,3 +68,8 @@ Pokud budeš chtít formulář přímo vložený do stránky (ne jen odkaz), mů
 ## Newsletter / Brevo
 
 The newsletter is embedded directly on `/newsletter.html` and submits to Brevo without exposing an API key. In Pages CMS → Site settings you can change the newsletter poster, headline, CZ/EN text, and the public Brevo form action URL (`sibforms.com/serve/...`). The Events page newsletter tile uses the same poster.
+
+
+## Rental
+
+Rental equipment is managed in **Pages CMS → Rental**. Each item has quantity, category, order and an optional product photo. Product photos uploaded later are stored under `assets/uploads/rental/` and appear automatically on `rental.html`.

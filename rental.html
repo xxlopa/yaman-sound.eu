@@ -1,0 +1,71 @@
+---
+layout: default
+nav: rental
+title: Rental
+permalink: /rental.html
+description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control and lighting.
+---
+<main class="page rental-page no-big-title">
+  <div class="container">
+    <p class="eyebrow">Rental</p>
+    <p class="lead rental-intro"><span class="cs">{{ site.data.site.rental_intro_cs }}</span><span class="en">{{ site.data.site.rental_intro_en }}</span></p>
+
+    {% assign rental = site.rental_items | where: 'published', true | sort: 'order' %}
+
+    {% assign dj_audio = rental | where: 'category', 'dj_audio' %}
+    {% if dj_audio.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">01</p><h2>DJ EQUIPMENT</h2></div>
+      <div class="rental-grid">{% for item in dj_audio %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign pa = rental | where: 'category', 'pa' %}
+    {% if pa.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">02</p><h2>PA / SPEAKERS</h2></div>
+      <div class="rental-grid">{% for item in pa %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign amplification = rental | where: 'category', 'amplification' %}
+    {% if amplification.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">03</p><h2>AMPLIFIERS / PROCESSING</h2></div>
+      <div class="rental-grid">{% for item in amplification %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign control = rental | where: 'category', 'control' %}
+    {% if control.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">04</p><h2>CONTROL / DATA</h2></div>
+      <div class="rental-grid">{% for item in control %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign lights = rental | where: 'category', 'lights' %}
+    {% if lights.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">05</p><h2>LIGHTS</h2></div>
+      <div class="rental-grid">{% for item in lights %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign accessories = rental | where: 'category', 'accessories' %}
+    {% if accessories.size > 0 %}
+    <section class="rental-group">
+      <div class="rental-group-heading"><p class="role">06</p><h2>ACCESSORIES</h2></div>
+      <div class="rental-grid">{% for item in accessories %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    <section class="rental-contact-panel">
+      <div>
+        <p class="eyebrow"><span class="cs">Poptávka</span><span class="en">Enquiry</span></p>
+        <h2><span class="cs">Termín, techniku a cenu domluvíme podle akce.</span><span class="en">Date, equipment and pricing are arranged per event.</span></h2>
+      </div>
+      <a class="btn" href="mailto:{{ site.data.site.rental_contact_email }}">{{ site.data.site.rental_contact_email }}</a>
+    </section>
+  </div>
+</main>

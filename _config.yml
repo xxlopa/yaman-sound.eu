@@ -26,6 +26,9 @@ collections:
   media_posts:
     output: false
 
+  rental_items:
+    output: false
+
 defaults:
   - scope:
       path: ""
