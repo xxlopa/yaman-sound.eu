@@ -12,53 +12,78 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
 
     {% assign rental = site.rental_items | where: 'published', true | sort: 'order' %}
 
+    <div class="rental-filter" data-rental-filter>
+      <div class="rental-filter-topline">
+        <div>
+          <p class="role"><span class="cs">FILTR TECHNIKY</span><span class="en">EQUIPMENT FILTER</span></p>
+          <p class="rental-filter-copy"><span class="cs">Vyber kategorii nebo napiš název techniky.</span><span class="en">Choose a category or search for equipment.</span></p>
+        </div>
+        <label class="rental-search-wrap">
+          <span class="sr-only"><span class="cs">Hledat techniku</span><span class="en">Search equipment</span></span>
+          <input class="rental-search" type="search" autocomplete="off" placeholder="Search equipment" data-rental-search data-placeholder-cs="Hledat techniku" data-placeholder-en="Search equipment">
+        </label>
+      </div>
+
+      <div class="rental-filter-buttons" role="group" aria-label="Rental categories">
+        <button type="button" class="rental-filter-btn active" data-rental-category="all" aria-pressed="true"><span class="cs">VŠE</span><span class="en">ALL</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="dj_audio" aria-pressed="false">DJ</button>
+        <button type="button" class="rental-filter-btn" data-rental-category="lights" aria-pressed="false"><span class="cs">SVĚTLA</span><span class="en">LIGHTING</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="pa" aria-pressed="false">PA / SPEAKERS</button>
+        <button type="button" class="rental-filter-btn" data-rental-category="amplification" aria-pressed="false"><span class="cs">ZESILOVAČE / DSP</span><span class="en">AMPS / PROCESSING</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="control" aria-pressed="false">CONTROL / DATA</button>
+        <button type="button" class="rental-filter-btn" data-rental-category="accessories" aria-pressed="false"><span class="cs">PŘÍSLUŠENSTVÍ</span><span class="en">ACCESSORIES</span></button>
+      </div>
+    </div>
+
     {% assign dj_audio = rental | where: 'category', 'dj_audio' %}
     {% if dj_audio.size > 0 %}
-    <section class="rental-group">
+    <section class="rental-group" data-rental-group="dj_audio">
       <div class="rental-group-heading"><p class="role">01</p><h2>DJ EQUIPMENT</h2></div>
       <div class="rental-grid">{% for item in dj_audio %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
 
+    {% assign lights = rental | where: 'category', 'lights' %}
+    {% if lights.size > 0 %}
+    <section class="rental-group" data-rental-group="lights">
+      <div class="rental-group-heading"><p class="role">02</p><h2>LIGHTING</h2></div>
+      <div class="rental-grid">{% for item in lights %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
     {% assign pa = rental | where: 'category', 'pa' %}
     {% if pa.size > 0 %}
-    <section class="rental-group">
-      <div class="rental-group-heading"><p class="role">02</p><h2>PA / SPEAKERS</h2></div>
+    <section class="rental-group" data-rental-group="pa">
+      <div class="rental-group-heading"><p class="role">03</p><h2>PA / SPEAKERS</h2></div>
       <div class="rental-grid">{% for item in pa %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
 
     {% assign amplification = rental | where: 'category', 'amplification' %}
     {% if amplification.size > 0 %}
-    <section class="rental-group">
-      <div class="rental-group-heading"><p class="role">03</p><h2>AMPLIFIERS / PROCESSING</h2></div>
+    <section class="rental-group" data-rental-group="amplification">
+      <div class="rental-group-heading"><p class="role">04</p><h2>AMPLIFIERS / PROCESSING</h2></div>
       <div class="rental-grid">{% for item in amplification %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
 
     {% assign control = rental | where: 'category', 'control' %}
     {% if control.size > 0 %}
-    <section class="rental-group">
-      <div class="rental-group-heading"><p class="role">04</p><h2>CONTROL / DATA</h2></div>
+    <section class="rental-group" data-rental-group="control">
+      <div class="rental-group-heading"><p class="role">05</p><h2>CONTROL / DATA</h2></div>
       <div class="rental-grid">{% for item in control %}{% include rental-card.html item=item %}{% endfor %}</div>
-    </section>
-    {% endif %}
-
-    {% assign lights = rental | where: 'category', 'lights' %}
-    {% if lights.size > 0 %}
-    <section class="rental-group">
-      <div class="rental-group-heading"><p class="role">05</p><h2>LIGHTS</h2></div>
-      <div class="rental-grid">{% for item in lights %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
 
     {% assign accessories = rental | where: 'category', 'accessories' %}
     {% if accessories.size > 0 %}
-    <section class="rental-group">
+    <section class="rental-group" data-rental-group="accessories">
       <div class="rental-group-heading"><p class="role">06</p><h2>ACCESSORIES</h2></div>
       <div class="rental-grid">{% for item in accessories %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
+
+    <p class="rental-no-results" data-rental-empty hidden><span class="cs">Nic jsme podle tohoto filtru nenašli.</span><span class="en">No equipment matches this filter.</span></p>
 
     <section class="rental-contact-panel">
       <div>
@@ -69,3 +94,4 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
     </section>
   </div>
 </main>
+<script defer src="{{ '/assets/js/rental-filter.js' | relative_url }}?v=1"></script>

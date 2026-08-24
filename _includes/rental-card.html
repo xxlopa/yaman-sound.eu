@@ -1,4 +1,4 @@
-<article class="card rental-card">
+<article class="card rental-card" data-rental-item data-rental-search-text="{{ include.item.title | downcase | escape }}">
   {% if include.item.image %}
     <div class="rental-image-wrap"><img src="{{ include.item.image | relative_url }}" loading="lazy" alt="{{ include.item.title | escape }} rental"></div>
   {% else %}
@@ -8,7 +8,19 @@
     </div>
   {% endif %}
   <div class="card-content">
-    <div class="rental-card-topline"><span class="rental-count">{{ include.item.quantity }}×</span><span class="rental-category">{% case include.item.category %}{% when 'dj_audio' %}DJ / AUDIO{% when 'control' %}CONTROL / DATA{% when 'lights' %}LIGHTS{% endcase %}</span></div>
+    <div class="rental-card-topline">
+      <span class="rental-count">{{ include.item.quantity }}×</span>
+      <span class="rental-category">
+        {% case include.item.category %}
+          {% when 'dj_audio' %}DJ / AUDIO
+          {% when 'lights' %}LIGHTING
+          {% when 'pa' %}PA / SPEAKERS
+          {% when 'amplification' %}AMPS / PROCESSING
+          {% when 'control' %}CONTROL / DATA
+          {% when 'accessories' %}ACCESSORIES
+        {% endcase %}
+      </span>
+    </div>
     <h3>{{ include.item.title }}</h3>
     {% if include.item.description_cs or include.item.description_en %}
       <p><span class="cs">{{ include.item.description_cs }}</span><span class="en">{{ include.item.description_en }}</span></p>

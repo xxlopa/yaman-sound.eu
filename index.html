@@ -19,12 +19,7 @@ permalink: /index.html
       <span class="en">{{ site.data.site.home_intro_en }}</span>
     </p>
 
-
     <div class="events-poster-grid home-cards">
-
-      <!-- ==================================================
-           FEATURED EVENTS
-           ================================================== -->
 
       {% assign featured_events = site.events
         | where: 'published', true
@@ -33,43 +28,16 @@ permalink: /index.html
       %}
 
       {% for event in featured_events limit:2 %}
-
         <article class="card event-poster-card{% if forloop.first %} featured-event{% endif %}">
-
-          <a
-            class="event-card-link"
-            href="{{ event.url | relative_url }}"
-          >
-
-            <img
-              src="{{ event.image | relative_url }}"
-              loading="lazy"
-              alt="{{ event.title | escape }} flyer"
-            >
-
+          <a class="event-card-link" href="{{ event.url | relative_url }}">
+            <img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer">
             <div class="card-content">
-
-              <h3>
-                {{ event.title }}
-              </h3>
-
-              <p>
-                {{ event.date_display }} · {{ event.venue }}
-              </p>
-
+              <h3>{{ event.title }}</h3>
+              <p>{{ event.date_display }} · {{ event.venue }}</p>
             </div>
-
           </a>
-
         </article>
-
       {% endfor %}
-
-
-
-      <!-- ==================================================
-           FEATURED SOUND / RELEASES
-           ================================================== -->
 
       {% assign featured_sound = site.sound_posts
         | where: 'published', true
@@ -78,90 +46,28 @@ permalink: /index.html
       %}
 
       {% for sound in featured_sound limit:3 %}
-
         <article class="card event-poster-card">
-
-          <a
-            class="event-card-link"
-            href="{{ sound.url | relative_url }}"
-          >
-
-            <img
-              src="{{ sound.image | relative_url }}"
-              loading="lazy"
-              alt="{{ sound.title | escape }}"
-            >
-
+          <a class="event-card-link" href="{{ sound.url | relative_url }}">
+            <img src="{{ sound.image | relative_url }}" loading="lazy" alt="{{ sound.title | escape }}">
             <div class="card-content">
-
-              <h3>
-                {{ sound.title }}
-              </h3>
-
-              <p>
-                <span class="cs">
-                  {{ sound.summary_cs }}
-                </span>
-
-                <span class="en">
-                  {{ sound.summary_en }}
-                </span>
-              </p>
-
+              <h3>{{ sound.title }}</h3>
+              <p><span class="cs">{{ sound.summary_cs }}</span><span class="en">{{ sound.summary_en }}</span></p>
             </div>
-
           </a>
-
         </article>
-
       {% endfor %}
 
     </div>
-
   </div>
 
-
-
-  <!-- ==================================================
-       NEWSLETTER
-       ================================================== -->
-
   <section class="container home-newsletter">
-
     <div class="newsletter-card">
-
       <div>
-
-        <p class="eyebrow">
-          YAMAN NEWSLETTER
-        </p>
-
-        <h2>
-          <span class="cs">
-            Tracky, novinky a eventy
-          </span>
-
-          <span class="en">
-            Tracks, news and events
-          </span>
-        </h2>
-
-        <p>
-          <span class="cs">
-            Přihlaš se a dostávej YAMAN updates do mailu.
-          </span>
-
-          <span class="en">
-            Sign up for YAMAN updates in your inbox.
-          </span>
-        </p>
-
+        <p class="eyebrow">YAMAN NEWSLETTER</p>
+        <h2><span class="cs">Tracky, novinky a eventy</span><span class="en">Tracks, news and events</span></h2>
+        <p><span class="cs">Přihlaš se a dostávej YAMAN updates do mailu.</span><span class="en">Sign up for YAMAN updates in your inbox.</span></p>
       </div>
-
       {% include newsletter-cta.html %}
-
     </div>
-
   </section>
-
 </main>
