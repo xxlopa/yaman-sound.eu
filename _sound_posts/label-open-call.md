@@ -4,7 +4,7 @@ order: 3
 role: YAMAN RECORDINGS
 image: /assets/img/yaman-recordings-open-call.webp
 published: true
-featured: true
+featured: false
 summary_cs: Hledáme neurofunk a crossbreed artists s temným soundem a vlastním rukopisem.
 summary_en: We are looking for neurofunk and crossbreed artists with a dark
   sound and their own identity.
