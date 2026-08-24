@@ -21,29 +21,28 @@ content:
     view:
       fields:
         - title
-        - date
+        - event_date
         - status
         - featured
         - published
       primary: title
       sort:
-        - date
+        - event_date
         - title
       search:
         - title
         - venue
       default:
-        sort: date
+        sort: event_date
         order: desc
 
     fields:
-
       - name: title
         label: Event title
         type: string
         required: true
 
-      - name: date
+      - name: event_date
         label: Date
         type: date
         required: true
@@ -185,7 +184,6 @@ content:
         order: asc
 
     fields:
-
       - name: title
         label: Artist name
         type: string
@@ -281,7 +279,6 @@ content:
         order: asc
 
     fields:
-
       - name: title
         label: Title
         type: string
@@ -381,7 +378,6 @@ content:
         order: asc
 
     fields:
-
       - name: title
         label: Title
         type: string
@@ -420,6 +416,99 @@ content:
 
 
   # =========================================================
+  # RENTAL
+  # =========================================================
+
+  - name: rental_items
+    label: Rental
+    type: collection
+    path: _rental_items
+    filename: "{primary}.md"
+
+    view:
+      fields:
+        - title
+        - quantity
+        - category
+        - order
+        - published
+      primary: title
+      sort:
+        - category
+        - order
+        - title
+      search:
+        - title
+        - category
+      default:
+        sort: order
+        order: asc
+
+    fields:
+      - name: title
+        label: Product name
+        type: string
+        required: true
+
+      - name: quantity
+        label: Quantity
+        type: number
+        required: true
+        default: 1
+
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - name: dj_audio
+              label: DJ Equipment
+
+            - name: pa
+              label: PA / Speakers
+
+            - name: amplification
+              label: Amplifiers / Processing
+
+            - name: control
+              label: Control / Data
+
+            - name: lights
+              label: Lights
+
+            - name: accessories
+              label: Accessories
+
+      - name: order
+        label: Position/order
+        type: number
+        required: true
+
+      - name: image
+        label: Product photo
+        type: image
+        description: "Optional. Photo can be added later."
+        options:
+          media: images
+          path: rental
+          rename: safe
+
+      - name: description_cs
+        label: Description CZ
+        type: text
+
+      - name: description_en
+        label: Description EN
+        type: text
+
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+
+
+  # =========================================================
   # SITE SETTINGS
   # =========================================================
 
@@ -432,7 +521,6 @@ content:
       delete: false
 
     fields:
-
       - name: brand
         label: Brand
         type: string
@@ -487,35 +575,4 @@ content:
         type: string
 
       - name: youtube
-        label: YouTube
-        type: string
-
-
-      # =====================================================
-      # NEWSLETTER
-      # =====================================================
-
-      - name: newsletter_image
-        label: Newsletter poster
-        type: image
-        options:
-          media: images
-          path: newsletter
-          rename: safe
-
-      - name: newsletter_headline
-        label: Newsletter headline
-        type: string
-
-      - name: newsletter_text_cs
-        label: Newsletter text CZ
-        type: text
-
-      - name: newsletter_text_en
-        label: Newsletter text EN
-        type: text
-
-      - name: newsletter_form_action
-        label: Brevo form action URL
-        type: string
-        description: "Public sibforms.com/serve/... action URL from the embedded Brevo signup form."
+        label:
