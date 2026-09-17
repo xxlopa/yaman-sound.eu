@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title_en %}{{ page.title_en }} — {% else %}{{ page.title }} — {% endif %}YAMAN SOUND</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="author" content="YAMAN SOUND">
+  <meta property="og:title" content="{% if page.title_en %}{{ page.title_en }} — {% else %}{{ page.title }} — {% endif %}YAMAN SOUND">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/yaman-og.webp' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=54">
+  <script defer src="{{ '/assets/js/lang.js' | relative_url }}?v=50"></script>
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="page legal-page">
+    <div class="container legal-container">
+      <p class="eyebrow">YAMAN // LEGAL</p>
+      <h1 class="page-title legal-title">
+        <span class="cs">{{ page.title_cs }}</span>
+        <span class="en">{{ page.title_en }}</span>
+      </h1>
+
+      {% if page.last_updated %}
+      <p class="legal-updated">
+        <span class="cs">Poslední aktualizace: {{ page.last_updated }}</span>
+        <span class="en">Last updated: {{ page.last_updated }}</span>
+      </p>
+      {% endif %}
+
+      <section class="legal-operator" aria-label="Operator details">
+        <p class="legal-operator-label">
+          <span class="cs">Provozovatel / správce</span>
+          <span class="en">Operator / data controller</span>
+        </p>
+        <p class="legal-operator-name">{{ site.data.site.legal_operator_name | default: site.data.site.brand }}</p>
+        {% if site.data.site.legal_ico and site.data.site.legal_ico != '' %}<p>IČO: {{ site.data.site.legal_ico }}</p>{% endif %}
+        {% if site.data.site.legal_address and site.data.site.legal_address != '' %}<p>{{ site.data.site.legal_address }}</p>{% endif %}
+        <p><a href="mailto:{{ site.data.site.legal_email | default: site.data.site.rental_contact_email }}">{{ site.data.site.legal_email | default: site.data.site.rental_contact_email }}</a></p>
+      </section>
+
+      <article class="legal-content cs">
+        {{ page.content_cs | markdownify }}
+      </article>
+
+      <article class="legal-content en">
+        {{ page.content_en | markdownify }}
+      </article>
+    </div>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

@@ -6,5 +6,10 @@
     <div class="footer-newsletter">{% include newsletter-cta.html %}</div>
     <div class="footer-socials"><a href="{{ site.data.site.instagram_events }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/instagram.webp' | relative_url }}" alt="Instagram"></a><a href="{{ site.data.site.soundcloud }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/soundcloud.webp' | relative_url }}" alt="SoundCloud"></a><a href="{{ site.data.site.youtube }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/youtube.webp' | relative_url }}" alt="YouTube"></a></div>
   </div>
-  <small>© 2026 YAMAN SOUND. ALL RIGHTS RESERVED.</small>
+  <nav class="footer-legal" aria-label="Legal">
+    <a href="{{ '/privacy.html' | relative_url }}"><span class="cs">Ochrana osobních údajů</span><span class="en">Privacy Policy</span></a>
+    <span class="footer-legal-separator" aria-hidden="true">·</span>
+    <a href="{{ '/terms.html' | relative_url }}"><span class="cs">Obchodní podmínky</span><span class="en">Terms &amp; Conditions</span></a>
+  </nav>
+  <small>© {{ site.time | date: "%Y" }} YAMAN SOUND. ALL RIGHTS RESERVED.</small>
 </footer>

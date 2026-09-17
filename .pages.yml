@@ -509,6 +509,117 @@ content:
 
 
   # =========================================================
+  # LEGAL PAGES
+  # =========================================================
+
+  - name: legal
+    label: Legal / Privacy
+    type: group
+    items:
+      - name: privacy_page
+        label: Ochrana osobních údajů
+        type: file
+        path: privacy.md
+        operations:
+          delete: false
+        fields:
+          - name: layout
+            type: string
+            hidden: true
+
+          - name: permalink
+            type: string
+            hidden: true
+
+          - name: title_cs
+            label: Nadpis CZ
+            type: string
+            required: true
+
+          - name: title_en
+            label: Title EN
+            type: string
+            required: true
+
+          - name: last_updated
+            label: Poslední aktualizace
+            type: string
+            description: "Example: 17. 9. 2026"
+            required: true
+
+          - name: description
+            label: SEO description
+            type: text
+
+          - name: content_cs
+            label: Text CZ
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+
+          - name: content_en
+            label: Text EN
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+
+      - name: terms_page
+        label: Obchodní podmínky
+        type: file
+        path: terms.md
+        operations:
+          delete: false
+        fields:
+          - name: layout
+            type: string
+            hidden: true
+
+          - name: permalink
+            type: string
+            hidden: true
+
+          - name: title_cs
+            label: Nadpis CZ
+            type: string
+            required: true
+
+          - name: title_en
+            label: Title EN
+            type: string
+            required: true
+
+          - name: last_updated
+            label: Poslední aktualizace
+            type: string
+            description: "Example: 17. 9. 2026"
+            required: true
+
+          - name: description
+            label: SEO description
+            type: text
+
+          - name: content_cs
+            label: Text CZ
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+
+          - name: content_en
+            label: Text EN
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+
+
+  # =========================================================
   # SITE SETTINGS
   # =========================================================
 
@@ -525,6 +636,26 @@ content:
         label: Brand
         type: string
         readonly: true
+
+      - name: legal_operator_name
+        label: Legal operator / jméno nebo firma
+        type: string
+        description: "Required for Privacy Policy. Use the actual person or company operating YAMAN SOUND."
+
+      - name: legal_ico
+        label: IČO
+        type: string
+        description: "Optional if you do not have an IČO."
+
+      - name: legal_address
+        label: Legal address / sídlo
+        type: string
+        description: "Address of the operator/data controller."
+
+      - name: legal_email
+        label: Legal / privacy contact email
+        type: string
+
 
       - name: home_intro_cs
         label: Homepage intro CZ

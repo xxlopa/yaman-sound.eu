@@ -54,5 +54,6 @@ defaults:
 exclude:
   - README.txt
   - README-CMS.md
+  - LEGAL-SETUP.md
   - Gemfile
   - Gemfile.lock
