@@ -1,6 +1,6 @@
 ---
 title: SUSCITO - ELLSBETH
-order: 1
+order: 7
 role: NEW RELEASE
 image: /assets/uploads/whatsapp-image-2026-08-18-at-124517-1.webp
 published: true
