@@ -1,6 +1,6 @@
 ---
 title: DYLEMMA — GO HARD OR CRY
-order: 2
+order: 8
 role: NEW RELEASE
 image: /assets/img/dylemma-go-hard-or-cry.webp
 published: true
