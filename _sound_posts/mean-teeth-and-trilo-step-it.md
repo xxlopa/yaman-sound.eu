@@ -1,7 +1,7 @@
 ---
-title: MEAN TEETH & TRILO - Step It
+title: MEAN TEETH & TRILO - step it
 order: 2
-role: PREMIERE NOW!
+role: EXCLUSIVE PREMIERE
 image: /assets/uploads/img4890.webp
 published: true
 featured: true
