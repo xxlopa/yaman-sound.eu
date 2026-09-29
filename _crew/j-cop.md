@@ -1,7 +1,7 @@
 ---
 title: J.Cop
 order: 4
-role: LIGHT DESIGNER / DJ
+role: Light Designer / DJ
 image: /assets/img/jcop.webp
 published: true
 preview_cs: DJ zaměřený na tvrdý neurofunk, přesný groove a agresivní bassline.
