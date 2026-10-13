@@ -24,58 +24,46 @@ image: /assets/uploads/newsletter/yaman-newsletter-stay-in-the-loop.webp
 
         <div class="sib-form yaman-brevo-shell">
           <div id="sib-form-container" class="sib-form-container">
-
             <div id="error-message" class="sib-form-message-panel yaman-form-message yaman-form-error" role="alert">
-              <span class="cs">Přihlášení se nepodařilo. Zkontroluj e-mail a zkus to znovu.</span>
-              <span class="en">Your subscription could not be saved. Check your email and try again.</span>
-            </div>
-
-            <div id="success-message" class="sib-form-message-panel yaman-form-message yaman-form-success" role="status">
-              <strong>YOU'RE IN.</strong>
-              <span class="cs">Vítej v YAMAN newsletteru.</span>
-              <span class="en">Welcome to the YAMAN newsletter.</span>
-            </div>
-
-            <div id="sib-container" class="sib-container--large sib-container--vertical yaman-sib-container">
-            <form
-              id="sib-form"
-              method="POST"
-              action="{{ site.data.site.newsletter_form_action }}"
-              data-type="subscription"
-              class="newsletter-form yaman-newsletter-form"
-            >
-              <div class="yaman-input-wrap">
-                <label for="EMAIL" class="yaman-email-label">EMAIL</label>
-                <div class="entry__field">
-                  <input
-                    class="input"
-                    type="email"
-                    id="EMAIL"
-                    name="EMAIL"
-                    autocomplete="email"
-                    value=""
-                    placeholder="YOUR@EMAIL.COM"
-                    data-required="true"
-                    required
-                  >
-                </div>
-                <label class="entry__error entry__error--primary yaman-field-error"></label>
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">
+                  <span class="cs">Přihlášení se nepodařilo. Zkus to prosím znovu.</span>
+                  <span class="en">Your subscription could not be saved. Please try again.</span>
+                </span>
               </div>
-
-              <button
-                class="yaman-subscribe-button sib-form-block__button sib-form-block__button-with-loader"
-                form="sib-form"
-                type="submit"
-              >
-                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
-                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
-                </svg>
-                <span>JOIN NEWSLETTER →</span>
-              </button>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true">
-              <input type="hidden" name="locale" value="en">
-            </form>
+            </div>
+            <div id="success-message" class="sib-form-message-panel yaman-form-message yaman-form-success" role="status">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">
+                  <span class="cs">Přihlášení bylo úspěšně odesláno.</span>
+                  <span class="en">Your subscription has been successful.</span>
+                </span>
+              </div>
+            </div>
+            <div id="sib-container" class="sib-container--large sib-container--vertical yaman-sib-container" dir="ltr">
+              <form id="sib-form" method="POST" action="{{ site.data.site.newsletter_form_action | replace: '/v2/serve/', '/serve/' | escape }}" data-type="subscription" class="newsletter-form yaman-newsletter-form">
+                <div class="sib-input sib-form-block yaman-input-wrap">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label yaman-email-label" for="EMAIL" data-required="*">EMAIL</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" inputmode="email" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="YOUR@EMAIL.COM" data-required="true" required>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary yaman-field-error"></label>
+                  </div>
+                </div>
+                <div class="sib-form-block yaman-submit-wrap">
+                  <button class="yaman-subscribe-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
+                    </svg>
+                    JOIN NEWSLETTER →
+                  </button>
+                </div>
+                <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true" autocomplete="off">
+                <input type="hidden" name="locale" value="en">
+              </form>
             </div>
           </div>
         </div>
