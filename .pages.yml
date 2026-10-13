@@ -465,6 +465,9 @@ content:
             - name: dj_audio
               label: DJ Equipment
 
+            - name: lights
+              label: Lighting
+
             - name: pa
               label: PA / Speakers
 
@@ -473,9 +476,6 @@ content:
 
             - name: control
               label: Control / Data
-
-            - name: lights
-              label: Lights
 
             - name: accessories
               label: Accessories
@@ -706,4 +706,52 @@ content:
         type: string
 
       - name: youtube
-        label:
+        label: YouTube
+        type: string
+
+
+      # =====================================================
+      # RENTAL
+      # =====================================================
+
+      - name: rental_intro_cs
+        label: Rental intro CZ
+        type: text
+
+      - name: rental_intro_en
+        label: Rental intro EN
+        type: text
+
+      - name: rental_contact_email
+        label: Rental contact email
+        type: string
+
+
+      # =====================================================
+      # NEWSLETTER
+      # =====================================================
+
+      - name: newsletter_image
+        label: Newsletter poster
+        type: image
+        options:
+          media: images
+          path: newsletter
+          rename: safe
+
+      - name: newsletter_headline
+        label: Newsletter headline
+        type: string
+
+      - name: newsletter_text_cs
+        label: Newsletter text CZ
+        type: text
+
+      - name: newsletter_text_en
+        label: Newsletter text EN
+        type: text
+
+      - name: newsletter_form_action
+        label: Brevo form action URL
+        type: string
+        description: "Public sibforms.com/serve/... action URL from the embedded Brevo signup form."
