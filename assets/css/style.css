@@ -1807,7 +1807,7 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   }
 }
 
-/* Brevo newsletter status */
+/* Newsletter status */
 .newsletter-status{
   margin:12px 0 0!important;
   font-size:.95rem!important;
@@ -1870,7 +1870,7 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 
 
 /* =========================================================
-   YAMAN NEWSLETTER — embedded Brevo + poster (2026-08-18)
+   YAMAN NEWSLETTER — form and poster
    ========================================================= */
 
 /* Event newsletter card uses the same poster/card system as events */
@@ -1978,56 +1978,36 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   font-size:1.05rem!important;
   line-height:1.6!important;
 }
-.yaman-brevo-shell{
-  margin-top:36px;
-  padding:0!important;
-  background:transparent!important;
-  text-align:left!important;
-  font-family:"Space Grotesk",Arial,sans-serif!important;
-}
-.yaman-brevo-shell #sib-container{
+/* Kit form: retain the provider markup and match the YAMAN page. */
+.yaman-kit-shell{margin-top:36px;}
+.yaman-kit-form{
+  display:block!important;
   width:100%!important;
   max-width:none!important;
   margin:0!important;
   padding:0!important;
   background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  text-align:left!important;
+  font-family:"Space Grotesk",Arial,sans-serif!important;
 }
-.yaman-brevo-shell .sib-form-block{padding:0!important;}
-.yaman-brevo-shell .entry__field{
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-.yaman-brevo-shell .sib-form-message-panel__text{
-  padding:0!important;
-  text-align:left!important;
-  justify-content:flex-start!important;
-}
-.yaman-newsletter-form{
+.yaman-kit-form [data-style="clean"]{padding:0!important;}
+.yaman-kit-form .formkit-fields{
   display:grid!important;
   grid-template-columns:minmax(0,1fr) auto!important;
   gap:12px!important;
   align-items:end!important;
   margin:0!important;
 }
-.yaman-input-wrap{min-width:0;}
+.yaman-kit-form .formkit-field{min-width:0!important;margin:0!important;}
 .yaman-email-label{
   display:block!important;
   margin:0 0 9px 2px!important;
-  padding:0!important;
   color:var(--accent)!important;
   font-family:Rajdhani,Arial,sans-serif!important;
   font-size:.73rem!important;
   font-weight:800!important;
   letter-spacing:.2em!important;
 }
-.yaman-newsletter-form input[name=EMAIL]{
+.yaman-kit-form input[name="email_address"]{
   box-sizing:border-box!important;
   display:block!important;
   width:100%!important;
@@ -2043,25 +2023,27 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   font-size:1rem!important;
   box-shadow:none!important;
 }
-.yaman-newsletter-form input[name=EMAIL]::placeholder{
+.yaman-kit-form input[name="email_address"]::placeholder{
   color:rgba(255,255,255,.33)!important;
+  opacity:1!important;
   font-family:Rajdhani,Arial,sans-serif!important;
   font-weight:700!important;
   letter-spacing:.08em!important;
 }
-.yaman-newsletter-form input[name=EMAIL]:focus{
+.yaman-kit-form input[name="email_address"]:focus{
   border-color:var(--accent)!important;
-  box-shadow:0 0 0 3px rgba(255,106,0,.09),0 0 30px rgba(255,106,0,.06)!important;
+  box-shadow:0 0 0 3px rgba(255,106,0,.09)!important;
 }
-.yaman-subscribe-button{
-  box-sizing:border-box!important;
+.yaman-kit-form .formkit-submit{
+  position:relative!important;
+  margin:0!important;
   height:58px!important;
   padding:0 25px!important;
   border:1px solid var(--accent)!important;
   border-radius:0!important;
   background:var(--accent)!important;
   color:#fff!important;
-  cursor:pointer!important;
+  cursor:pointer;
   font-family:Rajdhani,Arial,sans-serif!important;
   font-size:.9rem!important;
   font-weight:900!important;
@@ -2069,63 +2051,26 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   text-transform:uppercase!important;
   white-space:nowrap!important;
   clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)!important;
-  transition:filter .2s ease,transform .2s ease,box-shadow .2s ease!important;
 }
-.yaman-subscribe-button:hover{
-  filter:brightness(1.12);
-  transform:translateY(-1px);
-  box-shadow:0 12px 34px rgba(255,106,0,.24)!important;
-}
-.yaman-subscribe-button:disabled{cursor:wait!important;opacity:.7;}
-.yaman-subscribe-button .progress-indicator__icon{
-  width:16px!important;
-  height:16px!important;
-  margin-right:7px!important;
-  fill:currentColor!important;
-  vertical-align:middle!important;
-}
-.sib-hide-loader-icon{display:none!important;}
-.input--hidden{display:none!important;}
-.yaman-field-error{
-  display:block!important;
-  min-height:0!important;
-  margin:7px 0 0!important;
-  color:#ff784d!important;
-  background:transparent!important;
-  border:0!important;
-  font-family:"Space Grotesk",Arial,sans-serif!important;
-  font-size:.8rem!important;
-  line-height:1.35!important;
-}
-.sib-form-message-panel{display:none;}
-.sib-form-message-panel.sib-form-message-panel--active{display:block!important;}
-.yaman-form-message{
-  box-sizing:border-box!important;
-  width:100%!important;
-  max-width:none!important;
+.yaman-kit-form .formkit-submit > span{padding:0!important;line-height:56px!important;}
+.yaman-kit-form .formkit-submit:hover{filter:brightness(1.12);}
+.yaman-kit-form .formkit-submit:focus-visible{outline:2px solid #fff!important;outline-offset:3px;}
+.yaman-kit-form .formkit-submit:disabled{cursor:wait;opacity:.7;}
+.yaman-kit-form .formkit-alert{
   margin:0 0 22px!important;
   padding:16px 18px!important;
-  border:1px solid rgba(255,106,0,.46)!important;
   border-radius:0!important;
   background:rgba(255,106,0,.07)!important;
+  border:1px solid rgba(255,106,0,.46)!important;
   color:#fff!important;
   font-family:"Space Grotesk",Arial,sans-serif!important;
   font-size:.9rem!important;
   line-height:1.5!important;
   text-align:left!important;
 }
-.yaman-form-message strong{
-  display:block;
-  margin-bottom:2px;
-  color:var(--accent);
-  font-family:Rajdhani,Arial,sans-serif;
-  font-size:1.15rem;
-  letter-spacing:.1em;
-}
-.yaman-form-error{
-  border-color:rgba(255,86,45,.55)!important;
-  background:rgba(255,72,32,.07)!important;
-}
+.yaman-kit-form .formkit-alert:empty{display:none!important;}
+.yaman-kit-form .formkit-alert-error{border-color:rgba(255,86,45,.55)!important;}
+.yaman-kit-form .formkit-powered-by-convertkit-container{margin-top:18px!important;}
 .newsletter-privacy{
   margin:18px 0 0!important;
   color:#73736f!important;
@@ -2143,7 +2088,7 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
   .newsletter-signup-panel{padding:42px 22px 30px;}
   .newsletter-signup-panel h1{font-size:clamp(3.2rem,18vw,5.2rem);}
   .newsletter-signal{display:none;}
-  .yaman-newsletter-form{grid-template-columns:1fr!important;}
+  .yaman-kit-form .formkit-fields{grid-template-columns:1fr!important;}
   .yaman-subscribe-button{width:100%!important;}
 }
 

@@ -1,6 +1,6 @@
 ---
 title: OPEN CALL / DEMO SUBMISSIONS
-order: 10
+order: 3
 role: YAMAN RECORDINGS
 image: /assets/img/yaman-recordings-open-call.webp
 published: true

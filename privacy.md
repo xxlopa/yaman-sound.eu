@@ -3,7 +3,7 @@ layout: legal
 permalink: /privacy.html
 title_cs: Zásady ochrany osobních údajů
 title_en: Privacy Policy
-last_updated: "17. 9. 2026"
+last_updated: "13. 10. 2026"
 description: "Informace o zpracování osobních údajů na webu YAMAN SOUND, v newsletteru, při poptávkách, rentalu a lead formulářích."
 content_cs: |-
   ## 1. Co tento dokument upravuje
@@ -41,9 +41,9 @@ content_cs: |-
 
   **Bezpečnost a provoz webu.** Nezbytné technické údaje mohou být zpracovávány za účelem zabezpečení webu, prevence zneužití a řešení technických problémů na základě oprávněného zájmu.
 
-  ## 4. Newsletter a Brevo
+  ## 4. Newsletter a Kit
 
-  Newsletter je technicky zajišťován prostřednictvím služby **Brevo**. Brevo může pro YAMAN SOUND zpracovávat zejména e-mailovou adresu, údaje o přihlášení a technické informace související s doručením newsletteru. Pokud používáme double opt-in, je přihlášení dokončeno až potvrzením odkazu zaslaného na uvedenou e-mailovou adresu.
+  Newsletter je technicky zajišťován prostřednictvím služby **Kit**. Kit může pro YAMAN SOUND zpracovávat zejména e-mailovou adresu, údaje o přihlášení a technické informace související s doručením newsletteru. Pokud používáme double opt-in, je přihlášení dokončeno až potvrzením odkazu zaslaného na uvedenou e-mailovou adresu.
 
   Z odběru se lze kdykoliv odhlásit prostřednictvím odkazu v e-mailu nebo kontaktováním YAMAN SOUND.
 
@@ -51,7 +51,7 @@ content_cs: |-
 
   Údaje mohou být v nezbytném rozsahu zpřístupněny poskytovatelům, kteří nám pomáhají provozovat web a služby, zejména:
 
-  - poskytovateli newsletterové infrastruktury (Brevo),
+  - poskytovateli newsletterové infrastruktury (Kit),
   - společnosti Meta v souvislosti s Facebookem, Instagramem a lead formuláři,
   - poskytovatelům hostingu, domény a síťové infrastruktury používané webem,
   - účetním, daňovým nebo právním poradcům, pokud je to nutné,
@@ -142,9 +142,9 @@ content_en: |-
 
   **Website security and operation.** Necessary technical data may be processed to secure the website, prevent abuse and resolve technical issues on the basis of our legitimate interests.
 
-  ## 4. Newsletter and Brevo
+  ## 4. Newsletter and Kit
 
-  Our newsletter is technically provided through **Brevo**. Brevo may process on our behalf information such as your email address, subscription information and technical delivery data. Where double opt-in is used, the subscription is completed only after you confirm the link sent to your email address.
+  Our newsletter is technically provided through **Kit**. Kit may process on our behalf information such as your email address, subscription information and technical delivery data. Where double opt-in is used, the subscription is completed only after you confirm the link sent to your email address.
 
   You can unsubscribe at any time using the link in an email or by contacting YAMAN SOUND.
 
@@ -152,7 +152,7 @@ content_en: |-
 
   Where necessary, data may be shared with providers that help us operate our website and services, including:
 
-  - our newsletter infrastructure provider (Brevo),
+  - our newsletter infrastructure provider (Kit),
   - Meta in connection with Facebook, Instagram and lead forms,
   - hosting, domain and network infrastructure providers used by the website,
   - accounting, tax or legal advisers where necessary,
