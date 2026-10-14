@@ -24,8 +24,14 @@ permalink: /index.html
       {% assign featured_events = site.events
         | where: 'published', true
         | where: 'featured', true
-        | sort: 'event_date'
       %}
+
+      {% comment %}Normalize CMS date values before sorting (YAML dates and strings can be mixed).{% endcomment %}
+      {% assign event_date_groups = featured_events | group_by_exp: 'event', "event.event_date | date: '%Y-%m-%d'" | sort: 'name' %}
+      {% assign featured_events = '' | split: ',' %}
+      {% for event_date_group in event_date_groups %}
+        {% assign featured_events = featured_events | concat: event_date_group.items %}
+      {% endfor %}
 
       {% for event in featured_events limit:2 %}
         <article class="card event-poster-card{% if forloop.first %} featured-event{% endif %}">
