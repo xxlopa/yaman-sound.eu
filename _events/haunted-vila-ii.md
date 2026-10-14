@@ -6,7 +6,7 @@ venue: Vila Štvanice
 city: Prague
 address: Ostrov Štvanice, Praha 7
 image: /assets/uploads/haunted-vila-ii-2026.webp
-status: upcoming
+status: past
 published: true
 featured: true
 summary_cs: HAUNTED VILA je zpátky. Disphonia [GR], Zigi SC, Furious Freaks a další.
