@@ -1,5 +1,5 @@
 ---
-title: J.COP — YAMAN SOUND SESSION
+title: J.COP - YAMAN MEMBER MIX
 order: 2
 role: Videoset
 published: true
