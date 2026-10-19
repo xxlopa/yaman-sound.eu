@@ -1,6 +1,6 @@
 ---
 title: J.COP - YAMAN MEMBER MIX
-order: 2
+order: 20
 role: Videoset
 published: true
 youtube_embed_url: https://www.youtube.com/embed/35L9pwK745Y?rel=0&modestbranding=1
