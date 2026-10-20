@@ -3,8 +3,8 @@ title: MEAN TEETH & TRILO - Step It
 order: 1
 role: PREMIERE NOW!
 image: /assets/uploads/img4890.webp
-published: true
-featured: true
+published: false
+featured: false
 summary_cs: Exclusive premiere of “Step It” by Mean Teeth & Trilo, taken from
   the forthcoming 'OBSCURA EP' on Yaman Recordings. Full EP Out October 2.
 summary_en: Exclusive premiere of “Step It” by Mean Teeth & Trilo, taken from

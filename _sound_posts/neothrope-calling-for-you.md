@@ -3,8 +3,8 @@ title: NEOTHROPE - CALLING FOR YOU
 order: 1
 role: EXCLUSIVE PREMIERE
 image: /assets/uploads/img3731.webp
-published: true
-featured: true
+published: false
+featured: false
 summary_cs: Listen to “Calling For You” by Neothrope, taken from the forthcoming
   Various Artists EP on Yaman Recordings.
 summary_en: Listen to “Calling For You” by Neothrope, taken from the forthcoming

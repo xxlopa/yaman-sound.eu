@@ -52,7 +52,7 @@ permalink: /index.html
       %}
 
       {% for sound in featured_sound limit:3 %}
-        <article class="card event-poster-card">
+        <article class="card event-poster-card{% if sound.tracks.size > 0 %} release-cover-card{% endif %}">
           <a class="event-card-link" href="{{ sound.url | relative_url }}">
             <img src="{{ sound.image | relative_url }}" loading="lazy" alt="{{ sound.title | escape }}">
             <div class="card-content">

@@ -3,8 +3,8 @@ title: ZEDBERG - PARADOX
 order: 1
 role: EXCLUSIVE PREMIERE
 image: /assets/uploads/img4247.webp
-published: true
-featured: true
+published: false
+featured: false
 summary_cs: Z nadcházejícího OBSCURA EP. Temný sound přímo pro klubový
   underground – poslouchej teď na SoundCloudu!
 summary_en: Taken from the upcoming OBSCURA EP. Pure dark underground sound –

@@ -1,0 +1,30 @@
+/* Release pages with a CMS-managed tracklist. */
+.sound-page .release-cover-card img,.home-cards .release-cover-card img{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;filter:none!important;}
+.release-detail-page .detail-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr);gap:40px;}
+.release-detail-page .detail-copy{min-width:0;}
+.release-detail-page .page-title{font-size:clamp(2.8rem,5.7vw,5.4rem)!important;line-height:1!important;overflow-wrap:normal;}
+.release-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;color:#aaa;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;}
+.release-tracklist{margin-top:32px;}
+.release-tracklist h2{margin:0 0 14px;font-family:Rajdhani,Arial,sans-serif;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.release-tracks{list-style:none;margin:0;padding:0;display:grid;gap:16px;}
+.release-track{min-width:0;padding:18px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);}
+.release-track-heading{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.release-track-number{font-family:Rajdhani,Arial,sans-serif;font-size:1.6rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;}
+.release-track-copy{min-width:0;}
+.release-track-artist{margin:0 0 4px;color:#aaa;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;overflow-wrap:anywhere;}
+.release-track h3{margin:0;color:#f7f7f3;font-family:Rajdhani,Arial,sans-serif;font-size:1.5rem;line-height:1.15;overflow-wrap:anywhere;}
+.release-track-player{display:block;max-width:100%;border:0;border-radius:4px;background:#111;}
+.release-track-link{display:inline-block;margin-top:12px;color:#c9c9c3;font-size:.78rem;text-decoration:underline;text-underline-offset:3px;}
+.release-track-link:hover,.release-track-link:focus-visible{color:var(--accent);}
+.release-detail-page .detail-poster img{display:block;width:100%;height:auto!important;filter:none;}
+.release-detail-page .button-row{margin-top:26px;}
+@media(max-width:1100px){
+  .release-detail-page .detail-grid{grid-template-columns:1fr;max-width:760px;}
+  .release-detail-page .detail-poster{grid-row:1;width:min(100%,360px);justify-self:center;}
+}
+@media(max-width:640px){
+  .release-detail-page .detail-poster{width:min(66vw,280px);}
+  .release-detail-page .page-title{font-size:clamp(2.5rem,10vw,3.8rem)!important;}
+  .release-meta{justify-content:center;}
+  .release-track{padding:14px;}
+}
