@@ -77,4 +77,11 @@ description_en: >
 
 
   STAY YAMAN
+artist: JURTLE
+youtube_url: https://www.youtube.com/watch?v=URxmkiQhTXA
+artist_socials:
+  - label: Instagram
+    url: https://www.instagram.com/jurtlednb/
+  - label: SoundCloud
+    url: https://soundcloud.com/jur-361143750
 ---

@@ -8,4 +8,5 @@ permalink: /sitemap.xml
 {% for p in site.events %}{% if p.published %}<url><loc>{{ p.url | absolute_url }}</loc></url>{% endif %}{% endfor %}
 {% for p in site.crew %}{% if p.published %}<url><loc>{{ p.url | absolute_url }}</loc></url>{% endif %}{% endfor %}
 {% for p in site.sound_posts %}{% if p.published %}<url><loc>{{ p.url | absolute_url }}</loc></url>{% endif %}{% endfor %}
+{% for p in site.media_posts %}{% if p.published %}<url><loc>{{ p.url | absolute_url }}</loc></url>{% endif %}{% endfor %}
 </urlset>

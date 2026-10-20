@@ -29,14 +29,20 @@
   .release-track{padding:14px;}
 }
 
-/* Equal homepage tiles, square release covers and full portrait flyers. */
-.home-page .home-cards{grid-auto-rows:1fr;align-items:stretch!important;}
+/* Compact homepage tiles with the same outer dimensions. */
+.home-page .home-cards{--home-media-height:clamp(200px,20vw,260px);grid-auto-rows:1fr;align-items:stretch!important;gap:24px!important;}
 .home-page .home-card{min-width:0;min-height:0;height:100%;}
 .home-page .home-card>.event-card-link{display:flex;flex-direction:column;height:100%;}
-.home-page .home-card-media{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:3/5;flex:none;overflow:hidden;background:linear-gradient(145deg,#0e0e0e,#030303);}
+.home-page .home-card-media{display:flex;align-items:center;justify-content:center;width:100%;height:var(--home-media-height);flex:none;overflow:hidden;background:linear-gradient(145deg,#0e0e0e,#030303);}
 .home-page .home-card .home-card-media img{display:block;width:100%!important;height:100%!important;min-height:0!important;max-height:100%;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;}
-.home-page .home-card-release .home-card-media img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;filter:none!important;}
-.home-page .home-card .card-content{flex:1;min-height:142px;box-sizing:border-box;}
+.home-page .home-card-release .home-card-media img{width:min(100%,var(--home-media-height))!important;height:var(--home-media-height)!important;aspect-ratio:1/1!important;object-fit:cover!important;filter:none!important;}
+.home-page .home-card .card-content{flex:1;min-height:124px;box-sizing:border-box;padding:16px 18px!important;}
+.home-page .home-card h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin:0 0 10px!important;line-height:1.15!important;}
+.home-page .home-card .card-content p{margin:0!important;font-size:.88rem!important;line-height:1.4!important;}
+.home-page .home-card .card-content p>span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+html[data-lang="en"] .home-card .card-content .cs,html[data-lang="cs"] .home-card .card-content .en{display:none!important;}
+@media(max-width:1100px){.home-page .home-cards{--home-media-height:240px;}}
+@media(max-width:700px){.home-page .home-cards{--home-media-height:220px;margin-top:34px!important;}.home-page .home-card .card-content{min-height:112px;}}
 .release-player-button{margin-bottom:12px;}
 .release-player-status{color:#aaa;font-size:.85rem;line-height:1.5;}
 .release-player [hidden]{display:none!important;}

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign youtube_id = page.youtube_embed_url | split: '/embed/' | last | split: '?' | first %}
+{% assign youtube_url = page.youtube_url %}
+{% if youtube_url == nil or youtube_url == '' %}{% capture youtube_url %}https://www.youtube.com/watch?v={{ youtube_id }}{% endcapture %}{% endif %}
+<main class="page media-page media-detail-page">
+  <div class="container media-detail-container">
+    <a class="media-back" href="{{ '/media.html' | relative_url }}">← <span class="cs">Všechny videosety</span><span class="en">All videosets</span></a>
+    <header class="media-detail-header">
+      <p class="eyebrow">{{ page.role | default: 'Videoset' | escape }} / YAMAN SOUND</p>
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+    </header>
+    <div class="media-detail-player">
+      <iframe src="{{ page.youtube_embed_url | escape }}" title="{{ page.title | escape }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="media-detail-columns">
+      <article class="media-description">
+        <h2><span class="cs">O setu</span><span class="en">About the set</span></h2>
+        <div class="cs">{{ page.description_cs | markdownify }}</div>
+        <div class="en">{{ page.description_en | markdownify }}</div>
+      </article>
+      <aside class="media-links-panel">
+        <h2><span class="cs">Poslech a video</span><span class="en">Listen & watch</span></h2>
+        <div class="media-links">
+          <a class="btn" href="{{ youtube_url | strip | escape }}" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+          {% if page.soundcloud_url and page.soundcloud_url != '' %}<a class="btn secondary" href="{{ page.soundcloud_url | escape }}" target="_blank" rel="noopener noreferrer">SoundCloud ↗</a>{% elsif site.data.site.soundcloud %}<a class="btn secondary" href="{{ site.data.site.soundcloud | escape }}" target="_blank" rel="noopener noreferrer">YAMAN on SoundCloud ↗</a>{% endif %}
+        </div>
+        {% if page.artist_socials.size > 0 %}
+        <h2 class="media-artist-name">{{ page.artist | default: 'Artist' | escape }}</h2>
+        <div class="media-artist-links">
+          {% for social in page.artist_socials %}{% if social.url and social.label %}<a href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer">{{ social.label | escape }} ↗</a>{% endif %}{% endfor %}
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</main>

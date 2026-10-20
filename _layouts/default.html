@@ -16,7 +16,8 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=56">
-  <link rel="stylesheet" href="{{ '/assets/css/release.css' | relative_url }}?v=3">
+  <link rel="stylesheet" href="{{ '/assets/css/release.css' | relative_url }}?v=4">
+  {% if page.nav == 'media' %}<link rel="stylesheet" href="{{ '/assets/css/media.css' | relative_url }}?v=1">{% endif %}
   <script defer src="{{ '/assets/js/lang.js' | relative_url }}?v=50"></script>
   {% if page.tracks.size > 0 %}<script defer src="{{ '/assets/js/release-player.js' | relative_url }}?v=3"></script>{% endif %}
 </head>
