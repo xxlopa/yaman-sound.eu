@@ -1,5 +1,5 @@
 /* Release pages with a CMS-managed tracklist. */
-.sound-page .release-cover-card img,.home-cards .release-cover-card img{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;filter:none!important;}
+.sound-page .release-cover-card img{height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;filter:none!important;}
 .release-detail-page .detail-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr);gap:40px;}
 .release-detail-page .detail-copy{min-width:0;}
 .release-detail-page .page-title{font-size:clamp(2.8rem,5.7vw,5.4rem)!important;line-height:1!important;overflow-wrap:normal;}
@@ -28,3 +28,15 @@
   .release-meta{justify-content:center;}
   .release-track{padding:14px;}
 }
+
+/* Equal homepage tiles, square release covers and full portrait flyers. */
+.home-page .home-cards{grid-auto-rows:1fr;align-items:stretch!important;}
+.home-page .home-card{min-width:0;min-height:0;height:100%;}
+.home-page .home-card>.event-card-link{display:flex;flex-direction:column;height:100%;}
+.home-page .home-card-media{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:3/5;flex:none;overflow:hidden;background:linear-gradient(145deg,#0e0e0e,#030303);}
+.home-page .home-card .home-card-media img{display:block;width:100%!important;height:100%!important;min-height:0!important;max-height:100%;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;}
+.home-page .home-card-release .home-card-media img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;filter:none!important;}
+.home-page .home-card .card-content{flex:1;min-height:142px;box-sizing:border-box;}
+.release-player-button{margin-bottom:12px;}
+.release-player-status{color:#aaa;font-size:.85rem;line-height:1.5;}
+.release-player [hidden]{display:none!important;}
