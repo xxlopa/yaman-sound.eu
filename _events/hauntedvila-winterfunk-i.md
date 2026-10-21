@@ -5,7 +5,7 @@ date_display: 08.01.2026
 venue: Vila Štvanice
 city: Prague
 address: ostrov Štvanice 858, 170 00 Praha 7-Holešovice
-image: /assets/uploads/std.png
+image: /assets/uploads/save-the-date.png
 status: upcoming
 featured: true
 published: true
