@@ -34,12 +34,13 @@ permalink: /index.html
       {% endfor %}
 
       {% for event in featured_events limit:2 %}
-        <article class="card event-poster-card home-card home-card-event{% if forloop.first %} featured-event{% endif %}">
+        <article class="card catalog-card event-poster-card home-card home-card-event{% if forloop.first %} featured-event{% endif %}">
           <a class="event-card-link" href="{{ event.url | relative_url }}">
-            <div class="home-card-media"><img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"></div>
-            <div class="card-content">
+            <div class="home-card-media catalog-card-media"><img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"></div>
+            <div class="card-content catalog-card-copy">
+              <p class="catalog-card-role"><span class="cs">AKCE</span><span class="en">EVENT</span></p>
               <h3>{{ event.title }}</h3>
-              <p>{{ event.date_display }} · {{ event.venue }}</p>
+              <p class="catalog-card-summary">{{ event.date_display }} · {{ event.venue }}</p>
             </div>
           </a>
         </article>
@@ -52,12 +53,13 @@ permalink: /index.html
       %}
 
       {% for sound in featured_sound limit:3 %}
-        <article class="card event-poster-card home-card home-card-release{% if sound.tracks.size > 0 %} release-cover-card{% endif %}">
+        <article class="card catalog-card event-poster-card home-card home-card-release{% if sound.tracks.size > 0 %} release-cover-card{% endif %}">
           <a class="event-card-link" href="{{ sound.url | relative_url }}">
-            <div class="home-card-media"><img src="{{ sound.image | relative_url }}" loading="lazy" alt="{{ sound.title | escape }}"></div>
-            <div class="card-content">
+            <div class="home-card-media catalog-card-media"><img src="{{ sound.image | relative_url }}" loading="lazy" alt="{{ sound.title | escape }}"></div>
+            <div class="card-content catalog-card-copy">
+              <p class="catalog-card-role">{{ sound.role | default: 'YAMAN RECORDINGS' | escape }}</p>
               <h3>{{ sound.title }}</h3>
-              <p><span class="cs">{{ sound.summary_cs }}</span><span class="en">{{ sound.summary_en }}</span></p>
+              <p class="catalog-card-summary"><span class="cs">{{ sound.summary_cs }}</span><span class="en">{{ sound.summary_en }}</span></p>
             </div>
           </a>
         </article>

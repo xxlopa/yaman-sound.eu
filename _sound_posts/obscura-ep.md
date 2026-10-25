@@ -2,7 +2,7 @@
 title: OBSCURA EP
 order: 0
 role: VARIOUS ARTISTS / EP
-image: /assets/uploads/sound/obscura-ep.webp
+image: /assets/uploads/sound/obscura-ep-portrait.webp
 published: true
 featured: true
 catalogue: YMNEP001

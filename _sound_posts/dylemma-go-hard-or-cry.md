@@ -2,7 +2,7 @@
 title: DYLEMMA — GO HARD OR CRY
 order: 2
 role: NEW RELEASE
-image: /assets/img/dylemma-go-hard-or-cry.webp
+image: /assets/uploads/sound/dylemma-portrait.webp
 published: true
 featured: true
 summary_cs: První YAMAN release je venku — tvrdý neurofunk plný syrové energie.

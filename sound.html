@@ -10,7 +10,7 @@ permalink: /sound.html
     <p class="lead"><span class="cs">{{ site.data.site.sound_intro_cs | newline_to_br }}</span><span class="en">{{ site.data.site.sound_intro_en | newline_to_br }}</span></p>
     <section class="sound-feature-grid">
       {% assign posts = site.sound_posts | where: 'published', true | sort: 'order' %}
-      {% for post in posts %}<article class="card label-post-card sound-post-inline{% if post.tracks.size > 0 %} release-cover-card{% endif %}"><a class="event-card-link" href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" loading="lazy" alt="{{ post.title | escape }}"><div class="card-content"><p class="role">{{ post.role }}</p><h3>{{ post.title }}</h3><p><span class="cs">{{ post.summary_cs }}</span><span class="en">{{ post.summary_en }}</span></p></div></a></article>{% endfor %}
+      {% for post in posts %}<article class="card catalog-card label-post-card sound-post-inline{% if post.tracks.size > 0 %} release-cover-card{% endif %}"><a class="event-card-link" href="{{ post.url | relative_url }}"><div class="catalog-card-media"><img src="{{ post.image | relative_url }}" loading="lazy" alt="{{ post.title | escape }}"></div><div class="card-content catalog-card-copy"><p class="catalog-card-role">{{ post.role }}</p><h3>{{ post.title }}</h3><p class="catalog-card-summary"><span class="cs">{{ post.summary_cs }}</span><span class="en">{{ post.summary_en }}</span></p></div></a></article>{% endfor %}
     </section>
   </div>
 </main>

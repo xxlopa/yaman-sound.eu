@@ -1,7 +1,7 @@
 ---
 title: HAUNTEDVILA WHITEOUT I.
 event_date: 2027-01-08
-date_display: 08.01.2026
+date_display: 08.01.2027
 venue: Vila Štvanice
 city: Prague
 address: ostrov Štvanice 858, 170 00 Praha 7-Holešovice

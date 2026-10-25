@@ -2,7 +2,7 @@
 title: SUSCITO - ELLSBETH
 order: 1
 role: NEW RELEASE
-image: /assets/uploads/whatsapp-image-2026-08-18-at-124517-1.webp
+image: /assets/uploads/sound/suscito-portrait.webp
 published: true
 featured: true
 summary_cs: Suscito's altest release "Elssbeth" under YAMAN Recordings
