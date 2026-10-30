@@ -77,4 +77,10 @@ extra_info_en: >-
   KEEPING YOU RAVING.
 ticket_url: TBA
 ticket_label: Tickets TBA
+facebook: https://fb.me/e/4oikeGH8W
+instagram: https://www.instagram.com/p/DfHSFq4ML4G/
+lineup_headliners:
+  - SINDICATE
+  - SYMPLEX
+  - PANDAEMONIUM
 ---
