@@ -5,73 +5,94 @@ date_display: 08.01.2027
 venue: Vila Štvanice
 city: Prague
 address: ostrov Štvanice 858, 170 00 Praha 7-Holešovice
-image: /assets/uploads/std.webp
+image: /assets/uploads/releease.webp
 status: upcoming
 featured: true
 published: true
-summary_cs: SAVE THE DATE
-summary_en: SAVE THE DATE
-description_cs: |-
-  THE VILA AWAITS
-  THE LINE-UP IS HIDING IN THE SHADOWS
-description_en: |-
-  THE VILA AWAITS
-  THE LINE-UP IS HIDING IN THE SHADOWS
-extra_info_cs: >-
-  Léto je dávno za náma, poslední Vila je pryč a před náma je další kapitola.
-  Tentokrát se Vila zahalí do zimní atmosféry. ❄️
+summary_cs: SINDICATE, SYMPLEX, PANDAEMONIUM, ENTITA, VOLUME PLUS, ZEDBERG
+summary_en: SINDICATE, SYMPLEX, PANDAEMONIUM, ENTITA, VOLUME PLUS, ZEDBERG
+description_cs: >
+  🇨🇿 Na Vile už pomalu zamrzá vodovodní potrubí a naší povinností zůstává s
+  tím něco udělat… ❄️🔥
+
+  První YAMAN party nového roku se odehraje 8. ledna 2027 na naší oblíbené Vile.
+  A věřte nám, že tentokrát rozhodně nikomu zima nebude.
 
 
-  Leden, mrazivý počasí a temná atmosféra. Zima nás rozhodně nezastaví, naopak -
-  chystáme další nezapomenutelnou noc plnou nekompromisního neurofunku a
-  energie, na kterou jen tak nezapomeneš. 🖤
+  Ze sousedního Německa k nám dorazí 🔴 SINDICATE 🔴, producent s releasy na
+  labelech jako NEUROPUNK nebo všem dobře známý EATBRAIN a HANZOM. Připravte se
+  na pořádnou dávku nekompromisního neurofunku.
+
+  Stejně tak Vás dostane český projekt 🔴 PANDAEMONIUM 🔴, za kterým stojí
+  dvojice RAIDO & GEXAN. Ti na Vilu přivezou charakteristický BLACKOUT sound. 🖤
 
 
-  Ani tentokrát neuhneme z našeho klasického booking stylu. Těšit se můžeš na
-  pořádně nabitej lineup, zajímavá jména a kombinaci, které na české scéně jen
-  tak nepotkáš. Koho jsme si pro vás tentokrát připravili, si ale ještě chvíli
-  necháme pro sebe. 👀
+  Z Ostravska se k nim přidá také legendární 🔴 SYMPLEX 🔴, zakladatel labelu
+  HOOFBEATS. A tím rozhodně nekončíme.
 
 
-  O support se tradičně postarají členové YAMAN. A protože je leden, tentokrát
-  se společně schováme před mrazem dovnitř, kde se postaráme o to, aby rozhodně
-  nikomu zima nebyla. 🔥
+  Chybět nebude ani bulharský řezník 🔴 ZEDBERG 🔴, který se představí ve
+  speciálním B2B setu s Chrisem a pražská domácí legenda VOLUME PLUS, zakladatel
+  DRUMBASSTERDS crew a člen Let It Roll bookingu. 💥
 
 
-  Pokud jsi s námi zažil některou z předchozích edic, víš, co očekávat. A pokud
-  ne, leden bude ideální příležitostí to změnit.
+  O support se tradičně postarají členové YAMAN společně se svými hosty.
 
 
-  STAY YAMAN
+  Tentokrát se před lednovým mrazem schováme dovnitř, kde na vás bude čekat
+  custom stage design, světla, pořádný zvuk a projekce v režii YAMAN members. A
+  samozřejmě party až do rána. 🔊
+
+
+  Tohle je HAUNTEDVILA. 🖤
+
+
+  STAY YAMAN.
 
 
   KEEPING YOU RAVING.
-extra_info_en: >-
-  Summer is long gone, the last HauntedVila is behind us, and a new chapter
-  awaits. This time, Vila Štvanice is getting a winter makeover. ❄️
+description_en: >-
+  🇬🇧 The water pipes at the Vila are slowly starting to freeze, and we
+  consider it our duty to do something about it… ❄️🔥
 
 
-  January, freezing temperatures, and a dark atmosphere. Winter won't stop us –
-  quite the opposite. We're getting ready for another unforgettable night packed
-  with uncompromising neurofunk and energy you won't forget anytime soon. 🖤
+  The first YAMAN party of the new year takes place on January 8th, 2027, at our
+  beloved Vila Štvanice. And trust us, nobody's going to feel the cold this
+  time.
 
 
-  Once again, we're sticking to our signature booking style. Expect a stacked
-  lineup, exciting names, and combinations you don't come across every day in
-  the Czech scene. But we're keeping this edition's lineup a secret for just a
-  little longer. 👀
+  Joining us from Germany is 🔴 SINDICATE 🔴, a producer with releases on labels
+  such as NEUROPUNK, the well-known EATBRAIN and HANZOM. Get ready for a heavy
+  dose of uncompromising neurofunk.
 
 
-  As always, YAMAN members will be taking care of the support. And since it's
-  January, we'll be escaping the cold and heading indoors, where we'll make sure
-  nobody feels the chill. 🔥
+  The Czech project 🔴 PANDAEMONIUM 🔴, consisting of RAIDO & GEXAN, is set to
+  blow you away as well. They'll be bringing their signature BLACKOUT sound to
+  the Vila. 🖤
 
 
-  If you've been to any of our previous editions, you already know what to
-  expect. And if you haven't, January is the perfect chance to change that.
+  Joining them from Ostrava is the legendary 🔴 SYMPLEX 🔴, founder of HOOFBEATS
+  Records. And we're far from done.
 
 
-  STAY YAMAN
+  Bulgarian neurofunk butcher 🔴 ZEDBERG 🔴 will deliver a special B2B set with
+  Chris. Joining the lineup is also Prague's very own legend VOLUME PLUS,
+  founder of the DRUMBASSTERDS crew and member of the Let It Roll booking team.
+  💥
+
+
+  As always, YAMAN members and their guests will be taking care of the support.
+
+
+  This time, we're escaping the January cold and heading indoors, where custom
+  stage design, lighting, powerful sound and visuals by YAMAN members await you.
+  And of course, a party that goes on until the morning. 🔊
+
+
+  THIS IS HAUNTEDVILA. 🖤
+
+
+  STAY YAMAN.
 
 
   KEEPING YOU RAVING.
