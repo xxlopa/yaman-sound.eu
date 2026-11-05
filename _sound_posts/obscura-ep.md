@@ -1,6 +1,6 @@
 ---
 title: OBSCURA EP
-order: 1
+order: 47
 role: VARIOUS ARTISTS / EP
 image: /assets/uploads/sound/obscura-ep-portrait.webp
 published: true
