@@ -1,6 +1,6 @@
 ---
 title: DYLEMMA — GO HARD OR CRY
-order: 2
+order: 49
 role: NEW RELEASE
 image: /assets/uploads/sound/dylemma-portrait.webp
 published: true
