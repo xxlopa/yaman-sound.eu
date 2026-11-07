@@ -42,7 +42,7 @@ description_cs: >-
   “Venomous” is more than just a release. It's a statement.
 
 
-  **Tracklist:**
+  Tracklist:
 
   1. Venomous
 
@@ -53,11 +53,11 @@ description_cs: >-
   4. Riot
 
 
-  **Artist:** CyFunk
+  Artist: CyFunk
 
-  **Label:** Yaman Recordings
+  Label:Yaman Recordings
 
-  **Catalog:** YMNFREE003
+  Catalog: YMNFREE003
 
 
   Dark Sounds. Real Energy.
