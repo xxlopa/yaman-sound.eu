@@ -4,7 +4,7 @@
   {% else %}
     <div class="rental-image-placeholder" aria-label="Product photo can be added later">
       <span class="rental-placeholder-mark">YAMAN</span>
-      <span class="rental-placeholder-copy"><span class="cs">FOTO DOPLNÍME</span><span class="en">PHOTO COMING</span></span>
+      <span class="rental-placeholder-copy">PHOTO COMING</span>
     </div>
   {% endif %}
   <div class="card-content">
@@ -22,8 +22,8 @@
       </span>
     </div>
     <h3>{{ include.item.title }}</h3>
-    {% if include.item.description_cs or include.item.description_en %}
-      <p><span class="cs">{{ include.item.description_cs }}</span><span class="en">{{ include.item.description_en }}</span></p>
+    {% if include.item.description_en %}
+      <p>{{ include.item.description_en }}</p>
     {% endif %}
   </div>
 </article>

@@ -40,3 +40,13 @@
   .contact-page .contact-social-row img{width:20px!important;height:20px!important;flex:none;}
   .contact-page .contact-social-row .facebook-social{grid-column:1/-1;}
 }
+
+
+/* V2 — EN-only mobile header and tighter page starts */
+@media(max-width:640px){
+  .site-header .nav-wrap{grid-template-columns:1fr!important;justify-content:center!important;row-gap:14px!important;}
+  .site-header .nav-toggle-label{grid-column:1!important;}
+  .site-header .nav{grid-column:1!important;}
+  .site-header .top-socials{grid-column:1!important;justify-self:center!important;margin:0!important;}
+  .events-page,.label-page,.media-index-page,.rental-page,main.page:not(.detail-page):not(.artist-page):not(.media-detail-page):not(.legal-page){padding-top:28px!important;}
+}

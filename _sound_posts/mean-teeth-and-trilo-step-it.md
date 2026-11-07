@@ -60,4 +60,5 @@ description_en: >-
   www.yamansound.eu
 primary_url: https://on.soundcloud.com/fgLOdEUNbS8ODwzpKt
 primary_label: LISTEN NOW!
+soundcloud_url: https://on.soundcloud.com/fgLOdEUNbS8ODwzpKt
 ---

@@ -31,3 +31,8 @@
 .release-player-button{margin-bottom:12px;}
 .release-player-status{color:#aaa;font-size:.85rem;line-height:1.5;}
 .release-player [hidden]{display:none!important;}
+
+
+/* V7 rich release copy */
+.release-detail-page .detail-copy{min-width:0;}
+.release-detail-page .release-description{max-width:760px;}

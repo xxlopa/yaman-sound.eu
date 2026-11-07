@@ -2173,3 +2173,103 @@ body::after{background:radial-gradient(circle at 52% 14%,rgba(255,106,0,.10),tra
 .legal-content a,.newsletter-privacy a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,106,0,.36);}
 .legal-content a:hover,.newsletter-privacy a:hover{border-color:var(--accent);}
 @media(max-width:640px){.legal-page{padding-top:106px!important;}.legal-title{font-size:clamp(2.9rem,15vw,4.6rem)!important;}.legal-operator{margin-top:28px;padding:18px;}.legal-content{margin-top:34px;font-size:.94rem;}.legal-content h2{margin-top:38px;}}
+
+
+/* =========================================================
+   V57 — EN-only cleanup, equal-height cards, release links
+   ========================================================= */
+
+/* English-only header: no language switch column. */
+.site-header .nav-wrap{grid-template-columns:minmax(0,1fr) auto!important;}
+
+/* Equal-height catalogue cards. */
+.events-poster-grid,
+.home-cards,
+.sound-feature-grid,
+.roster-row,
+.media-card-grid,
+.rental-grid{align-items:stretch!important;}
+
+.event-poster-card,
+.home-card,
+.sound-post-inline,
+.roster-card,
+.media-preview-card,
+.rental-card{height:100%!important;}
+
+.event-poster-card .event-card-link,
+.home-card .event-card-link,
+.sound-post-inline .event-card-link,
+.roster-card.artist-link-card,
+.media-preview-link{display:flex!important;flex-direction:column!important;height:100%!important;}
+
+.event-poster-card .card-content,
+.home-card .card-content,
+.sound-post-inline .card-content,
+.roster-card .card-content,
+.media-preview-copy,
+.rental-card .card-content{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;}
+
+.event-poster-card .button-row,
+.home-card .button-row,
+.sound-post-inline .button-row{margin-top:auto!important;padding-top:18px!important;}
+
+/* Keep card copy rhythm consistent even with different text lengths. */
+.event-poster-card .card-content > p:not(.role),
+.catalog-card-summary,
+.artist-preview{margin-bottom:0!important;}
+
+/* Release description rendered from Markdown / Pages CMS rich text. */
+.release-description{margin-top:28px;max-width:780px;color:#d6d6d2;font-size:1.02rem;line-height:1.72;}
+.release-description > *:first-child{margin-top:0!important;}
+.release-description p{margin:0 0 18px;}
+.release-description h2,.release-description h3{margin:34px 0 14px;color:#fff;letter-spacing:.04em;}
+.release-description h2{font-size:1.55rem;}
+.release-description h3{font-size:1.2rem;color:var(--accent);}
+.release-description ul,.release-description ol{margin:10px 0 22px 1.35rem;padding-left:.75rem;}
+.release-description li{margin:7px 0;padding-left:4px;}
+.release-description strong{color:#fff;font-weight:700;}
+.release-description a{color:var(--accent);text-underline-offset:3px;}
+.release-body{margin-top:34px;}
+
+.streaming-section{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
+.streaming-label{margin:0 0 14px;color:#999;font-family:Rajdhani,Arial,sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.16em;}
+.streaming-links{display:flex;flex-wrap:wrap;gap:10px;}
+.streaming-link{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:10px 14px;border:1px solid rgba(255,255,255,.18);background:#090909;color:#f5f5f2;text-decoration:none;font-family:Rajdhani,Arial,sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;transition:.2s ease;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%);}
+.streaming-link img{width:22px;height:22px;object-fit:contain;flex:0 0 22px;}
+.streaming-link:hover{border-color:var(--accent);background:rgba(255,106,0,.10);transform:translateY(-2px);}
+.release-legacy-links{margin-top:28px!important;}
+
+/* Mobile: sticky header already consumes vertical space, so pages should not add desktop top padding. */
+@media(max-width:640px){
+  .site-header .nav-wrap{grid-template-columns:1fr!important;gap:14px!important;}
+  .site-header .top-socials{margin:0!important;justify-self:center!important;width:max-content!important;}
+  .site-header .nav-toggle-label,.site-header .nav{justify-self:center!important;}
+
+  .events-page,
+  .label-page,
+  .media-index-page,
+  .rental-page,
+  body > main.page:not(.detail-page):not(.artist-page):not(.media-detail-page):not(.legal-page){padding-top:28px!important;}
+
+  .events-page .container > .eyebrow,
+  .label-page .container > .eyebrow,
+  .media-index-page .container > .eyebrow,
+  .rental-page .container > .eyebrow,
+  body > main.page:not(.detail-page):not(.artist-page):not(.media-detail-page):not(.legal-page) .container > .eyebrow{margin-top:0!important;margin-bottom:8px!important;}
+
+  .events-page .lead,.label-page .lead,.rental-page .lead{margin-top:6px!important;}
+  .events-poster-grid,.sound-feature-grid,.media-card-grid{margin-top:28px!important;}
+  .roster-layout{margin-top:22px!important;}
+
+  .streaming-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .streaming-link{width:100%;min-width:0;padding:10px 11px;font-size:.76rem;letter-spacing:.045em;}
+  .release-description{font-size:.96rem;line-height:1.67;}
+}
+
+@media(max-width:380px){
+  .streaming-links{grid-template-columns:1fr;}
+}
+
+.streaming-link-download{border-color:rgba(255,106,0,.72);background:rgba(255,106,0,.10);}
+.streaming-link-download:hover{border-color:var(--accent);background:rgba(255,106,0,.20);}

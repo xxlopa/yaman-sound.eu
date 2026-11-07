@@ -11,12 +11,12 @@ permalink: /crew.html
       <div class="roster-row top-row">
       {% assign members = site.crew | where: 'published', true | sort: 'order' %}
       {% for artist in members limit:4 %}
-        <a class="card roster-card artist-link-card" href="{{ artist.url | relative_url }}"><img src="{{ artist.image | relative_url }}" loading="lazy" alt="{{ artist.title | escape }} {{ artist.role | escape }}"><div class="card-content"><p class="role">{{ artist.role }}</p><h3>{{ artist.title }}</h3><p class="artist-preview"><span class="cs">{{ artist.preview_cs }}</span><span class="en">{{ artist.preview_en }}</span></p><span class="open-profile"><span class="cs">Otevřít profil</span><span class="en">Open profile</span></span></div></a>
+        <a class="card roster-card artist-link-card" href="{{ artist.url | relative_url }}"><img src="{{ artist.image | relative_url }}" loading="lazy" alt="{{ artist.title | escape }} {{ artist.role | escape }}"><div class="card-content"><p class="role">{{ artist.role }}</p><h3>{{ artist.title }}</h3><p class="artist-preview">{{ artist.preview_en }}</p><span class="open-profile">Open profile</span></div></a>
       {% endfor %}
       </div>
       <div class="roster-row bottom-row">
       {% for artist in members offset:4 %}
-        <a class="card roster-card artist-link-card" href="{{ artist.url | relative_url }}"><img src="{{ artist.image | relative_url }}" loading="lazy" alt="{{ artist.title | escape }} {{ artist.role | escape }}"><div class="card-content"><p class="role">{{ artist.role }}</p><h3>{{ artist.title }}</h3><p class="artist-preview"><span class="cs">{{ artist.preview_cs }}</span><span class="en">{{ artist.preview_en }}</span></p><span class="open-profile"><span class="cs">Otevřít profil</span><span class="en">Open profile</span></span></div></a>
+        <a class="card roster-card artist-link-card" href="{{ artist.url | relative_url }}"><img src="{{ artist.image | relative_url }}" loading="lazy" alt="{{ artist.title | escape }} {{ artist.role | escape }}"><div class="card-content"><p class="role">{{ artist.role }}</p><h3>{{ artist.title }}</h3><p class="artist-preview">{{ artist.preview_en }}</p><span class="open-profile">Open profile</span></div></a>
       {% endfor %}
       </div>
     </div>

@@ -62,3 +62,9 @@ html[data-lang="en"] .catalog-card .cs,html[data-lang="cs"] .catalog-card .en{di
 @media(max-width:640px){
   .home-page .home-cards,.sound-page .sound-feature-grid{grid-template-columns:minmax(0,1fr)!important;max-width:360px!important;gap:22px!important;margin-top:30px!important;}
 }
+
+
+/* V3 */
+.catalog-card{height:100%!important;}
+.catalog-card .event-card-link{display:flex!important;flex-direction:column!important;height:100%!important;}
+.catalog-card .catalog-card-copy{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;}

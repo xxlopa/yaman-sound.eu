@@ -15,8 +15,7 @@ permalink: /index.html
     </h1>
 
     <p class="lead">
-      <span class="cs">{{ site.data.site.home_intro_cs }}</span>
-      <span class="en">{{ site.data.site.home_intro_en }}</span>
+      {{ site.data.site.home_intro_en }}
     </p>
 
     <div class="events-poster-grid home-cards">
@@ -38,7 +37,7 @@ permalink: /index.html
           <a class="event-card-link" href="{{ event.url | relative_url }}">
             <div class="home-card-media catalog-card-media"><img src="{{ event.image | relative_url }}" loading="lazy" alt="{{ event.title | escape }} flyer"></div>
             <div class="card-content catalog-card-copy">
-              <p class="catalog-card-role"><span class="cs">AKCE</span><span class="en">EVENT</span></p>
+              <p class="catalog-card-role">EVENT</p>
               <h3>{{ event.title }}</h3>
               <p class="catalog-card-summary">{{ event.date_display }} · {{ event.venue }}</p>
             </div>
@@ -59,7 +58,7 @@ permalink: /index.html
             <div class="card-content catalog-card-copy">
               <p class="catalog-card-role">{{ sound.role | default: 'YAMAN RECORDINGS' | escape }}</p>
               <h3>{{ sound.title }}</h3>
-              <p class="catalog-card-summary"><span class="cs">{{ sound.summary_cs }}</span><span class="en">{{ sound.summary_en }}</span></p>
+              <p class="catalog-card-summary">{{ sound.summary_en }}</p>
             </div>
           </a>
         </article>
@@ -72,8 +71,8 @@ permalink: /index.html
     <div class="newsletter-card">
       <div>
         <p class="eyebrow">YAMAN NEWSLETTER</p>
-        <h2><span class="cs">Tracky, novinky a eventy</span><span class="en">Tracks, news and events</span></h2>
-        <p><span class="cs">Přihlaš se a dostávej YAMAN updates do mailu.</span><span class="en">Sign up for YAMAN updates in your inbox.</span></p>
+        <h2>Tracks, news and events</h2>
+        <p>Sign up for YAMAN updates in your inbox.</p>
       </div>
       {% include newsletter-cta.html %}
     </div>

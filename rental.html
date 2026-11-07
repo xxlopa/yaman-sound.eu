@@ -8,30 +8,30 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
 <main class="page rental-page no-big-title">
   <div class="container">
     <p class="eyebrow">Rental</p>
-    <p class="lead rental-intro"><span class="cs">{{ site.data.site.rental_intro_cs }}</span><span class="en">{{ site.data.site.rental_intro_en }}</span></p>
+    <p class="lead rental-intro">{{ site.data.site.rental_intro_en }}</p>
 
     {% assign rental = site.rental_items | where: 'published', true | sort: 'order' %}
 
     <div class="rental-filter" data-rental-filter>
       <div class="rental-filter-topline">
         <div>
-          <p class="role"><span class="cs">FILTR TECHNIKY</span><span class="en">EQUIPMENT FILTER</span></p>
-          <p class="rental-filter-copy"><span class="cs">Vyber kategorii nebo napiš název techniky.</span><span class="en">Choose a category or search for equipment.</span></p>
+          <p class="role">EQUIPMENT FILTER</p>
+          <p class="rental-filter-copy">Choose a category or search for equipment.</p>
         </div>
         <label class="rental-search-wrap">
-          <span class="sr-only"><span class="cs">Hledat techniku</span><span class="en">Search equipment</span></span>
-          <input class="rental-search" type="search" autocomplete="off" placeholder="Search equipment" data-rental-search data-placeholder-cs="Hledat techniku" data-placeholder-en="Search equipment">
+          <span class="sr-only">Search equipment</span>
+          <input class="rental-search" type="search" autocomplete="off" placeholder="Search equipment" data-rental-search>
         </label>
       </div>
 
       <div class="rental-filter-buttons" role="group" aria-label="Rental categories">
-        <button type="button" class="rental-filter-btn active" data-rental-category="all" aria-pressed="true"><span class="cs">VŠE</span><span class="en">ALL</span></button>
+        <button type="button" class="rental-filter-btn active" data-rental-category="all" aria-pressed="true">ALL</button>
         <button type="button" class="rental-filter-btn" data-rental-category="dj_audio" aria-pressed="false">DJ</button>
-        <button type="button" class="rental-filter-btn" data-rental-category="lights" aria-pressed="false"><span class="cs">SVĚTLA</span><span class="en">LIGHTING</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="lights" aria-pressed="false">LIGHTING</button>
         <button type="button" class="rental-filter-btn" data-rental-category="pa" aria-pressed="false">PA / SPEAKERS</button>
-        <button type="button" class="rental-filter-btn" data-rental-category="amplification" aria-pressed="false"><span class="cs">ZESILOVAČE / DSP</span><span class="en">AMPS / PROCESSING</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="amplification" aria-pressed="false">AMPS / PROCESSING</button>
         <button type="button" class="rental-filter-btn" data-rental-category="control" aria-pressed="false">CONTROL / DATA</button>
-        <button type="button" class="rental-filter-btn" data-rental-category="accessories" aria-pressed="false"><span class="cs">PŘÍSLUŠENSTVÍ</span><span class="en">ACCESSORIES</span></button>
+        <button type="button" class="rental-filter-btn" data-rental-category="accessories" aria-pressed="false">ACCESSORIES</button>
       </div>
     </div>
 
@@ -83,12 +83,12 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
     </section>
     {% endif %}
 
-    <p class="rental-no-results" data-rental-empty hidden><span class="cs">Nic jsme podle tohoto filtru nenašli.</span><span class="en">No equipment matches this filter.</span></p>
+    <p class="rental-no-results" data-rental-empty hidden>No equipment matches this filter.</p>
 
     <section class="rental-contact-panel">
       <div>
-        <p class="eyebrow"><span class="cs">Poptávka</span><span class="en">Enquiry</span></p>
-        <h2><span class="cs">Termín, techniku a cenu domluvíme podle akce.</span><span class="en">Date, equipment and pricing are arranged per event.</span></h2>
+        <p class="eyebrow">Enquiry</p>
+        <h2>Date, equipment and pricing are arranged per event.</h2>
       </div>
       <a class="btn" href="mailto:{{ site.data.site.rental_contact_email }}">{{ site.data.site.rental_contact_email }}</a>
     </section>

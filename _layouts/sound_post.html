@@ -6,7 +6,13 @@ layout: default
     <article class="detail-copy">
       <p class="eyebrow">{{ page.role | default: 'YAMAN RECORDINGS' }}</p>
       <h1 class="page-title">{{ page.title }}</h1>
-      <p class="lead"><span class="cs">{{ page.description_cs }}</span><span class="en">{{ page.description_en }}</span></p>
+
+      {% if page.description_en %}
+      <div class="release-description">
+        {{ page.description_en | markdownify }}
+      </div>
+      {% endif %}
+
       {% if page.tracks.size > 0 %}
       <p class="release-meta">{% if page.catalogue %}<span>{{ page.catalogue | escape }}</span>{% endif %}{% if page.release_date %}<span>{{ page.release_date | date: '%d. %m. %Y' }}</span>{% endif %}<span>{{ page.tracks.size }} tracks</span></p>
       <section class="release-tracklist" id="release-tracks" aria-labelledby="release-tracklist-title">
@@ -19,22 +25,44 @@ layout: default
               <div class="release-track-copy"><p class="release-track-artist">{{ track.artist | escape }}</p><h3>{{ track.title | escape }}</h3></div>
             </div>
             {% if track.embed_url %}<div class="release-player" data-release-player data-source="{{ track.embed_url | escape }}" data-title="{{ track.artist | escape }} — {{ track.title | escape }} on SoundCloud">
-              <button class="btn release-player-button" type="button"><span class="cs">Přehrát skladbu</span><span class="en">Play track</span> ▷</button>
+              <button class="btn release-player-button" type="button">Play track ▷</button>
               <p class="release-player-status" role="status" aria-live="polite" hidden></p>
               <div data-player-mount></div>
             </div>{% endif %}
-            {% if track.url %}<a class="release-track-link" href="{{ track.url | escape }}" target="_blank" rel="noopener noreferrer"><span class="cs">Otevřít na SoundCloudu</span><span class="en">Open on SoundCloud</span> ↗</a>{% endif %}
+            {% if track.url %}<a class="release-track-link" href="{{ track.url | escape }}" target="_blank" rel="noopener noreferrer">Open on SoundCloud ↗</a>{% endif %}
           </li>
           {% endfor %}
         </ol>
       </section>
       {% endif %}
-      <div class="button-row">
-        {% if page.primary_url %}<a class="btn" href="{{ page.primary_url }}" target="_blank" rel="noopener">{{ page.primary_label | default: 'Open' }}</a>{% endif %}
+
+      {% assign has_platforms = false %}
+      {% if page.smartlink_url or page.free_download_url or page.soundcloud_url or page.spotify_url or page.apple_music_url or page.youtube_url or page.deezer_url or page.tidal_url or page.amazon_music_url or page.beatport_url or page.bandcamp_url %}{% assign has_platforms = true %}{% endif %}
+      {% if has_platforms %}
+      <section class="streaming-section" aria-label="Listen to this release">
+        <p class="streaming-label">LISTEN / DOWNLOAD</p>
+        <div class="streaming-links">
+          {% if page.smartlink_url %}<a class="streaming-link" href="{{ page.smartlink_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-all.svg' | relative_url }}" alt=""><span>All platforms</span></a>{% endif %}
+          {% if page.free_download_url %}<a class="streaming-link streaming-link-download" href="{{ page.free_download_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-free-download.svg' | relative_url }}" alt=""><span>Free download</span></a>{% endif %}
+          {% if page.spotify_url %}<a class="streaming-link" href="{{ page.spotify_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-spotify.svg' | relative_url }}" alt=""><span>Spotify</span></a>{% endif %}
+          {% if page.apple_music_url %}<a class="streaming-link" href="{{ page.apple_music_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-apple-music.svg' | relative_url }}" alt=""><span>Apple Music</span></a>{% endif %}
+          {% if page.soundcloud_url %}<a class="streaming-link" href="{{ page.soundcloud_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-soundcloud.svg' | relative_url }}" alt=""><span>SoundCloud</span></a>{% endif %}
+          {% if page.youtube_url %}<a class="streaming-link" href="{{ page.youtube_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-youtube.svg' | relative_url }}" alt=""><span>YouTube</span></a>{% endif %}
+          {% if page.deezer_url %}<a class="streaming-link" href="{{ page.deezer_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-deezer.svg' | relative_url }}" alt=""><span>Deezer</span></a>{% endif %}
+          {% if page.tidal_url %}<a class="streaming-link" href="{{ page.tidal_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-tidal.svg' | relative_url }}" alt=""><span>TIDAL</span></a>{% endif %}
+          {% if page.amazon_music_url %}<a class="streaming-link" href="{{ page.amazon_music_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-amazon-music.svg' | relative_url }}" alt=""><span>Amazon Music</span></a>{% endif %}
+          {% if page.beatport_url %}<a class="streaming-link" href="{{ page.beatport_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-beatport.svg' | relative_url }}" alt=""><span>Beatport</span></a>{% endif %}
+          {% if page.bandcamp_url %}<a class="streaming-link" href="{{ page.bandcamp_url | escape }}" target="_blank" rel="noopener"><img src="{{ '/assets/icons/platform-bandcamp.svg' | relative_url }}" alt=""><span>Bandcamp</span></a>{% endif %}
+        </div>
+      </section>
+      {% endif %}
+
+      <div class="button-row release-legacy-links">
+        {% if page.primary_url and has_platforms == false %}<a class="btn" href="{{ page.primary_url }}" target="_blank" rel="noopener">{{ page.primary_label | default: 'Open' }}</a>{% endif %}
         {% if page.secondary_url %}<a class="btn secondary" href="{{ page.secondary_url }}" target="_blank" rel="noopener">{{ page.secondary_label | default: 'More' }}</a>{% endif %}
-        <a class="btn secondary" href="{{ '/sound.html' | relative_url }}"><span class="cs">Zpět na Sound</span><span class="en">Back to Sound</span></a>
+        <a class="btn secondary" href="{{ '/sound.html' | relative_url }}">Back to Sound</a>
       </div>
-      {% if page.body_cs or page.body_en %}<div class="lead"><span class="cs">{{ page.body_cs | markdownify }}</span><span class="en">{{ page.body_en | markdownify }}</span></div>{% endif %}
+      {% if page.body_en %}<div class="release-description release-body">{{ page.body_en | markdownify }}</div>{% endif %}
     </article>
     <aside class="card detail-poster"><img src="{{ page.image | relative_url }}" loading="lazy" alt="{{ page.title | escape }}"></aside>
   </div>
