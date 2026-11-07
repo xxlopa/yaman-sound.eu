@@ -1,757 +1,748 @@
+# YAMAN SOUND — Pages CMS configuration
+# English-only CMS
+# Sound / Releases includes rich-text descriptions and streaming platform links.
+
 media:
-  - name: images
-    label: Images
-    input: assets/uploads
-    output: /assets/uploads
-    categories: [image]
-    rename: safe
+- name: images
+  label: Images
+  input: assets/uploads
+  output: /assets/uploads
+  categories:
+  - image
+  rename: safe
 
 content:
 
-  # =========================================================
-  # EVENTS
-  # =========================================================
+# =========================================================
+# EVENTS
+# =========================================================
 
-  - name: events
-    label: Events
-    type: collection
-    path: _events
-    filename: "{primary}.md"
+- name: events
+  label: Events
+  type: collection
+  path: _events
+  filename: '{primary}.md'
 
-    view:
-      fields:
-        - title
-        - event_date
-        - status
-        - featured
-        - published
-      primary: title
-      sort:
-        - event_date
-        - title
-      search:
-        - title
-        - venue
-      default:
-        sort: event_date
-        order: desc
-
+  view:
     fields:
-      - name: title
-        label: Event title
-        type: string
-        required: true
+    - title
+    - event_date
+    - status
+    - featured
+    - published
 
-      - name: event_date
-        label: Date
-        type: date
-        required: true
-        options:
-          format: yyyy-MM-dd
+    primary: title
 
-      - name: date_display
-        label: Date shown on site
-        type: string
-        description: "Example: 03. 10. 2026"
-        required: true
+    sort:
+    - event_date
+    - title
 
-      - name: venue
-        label: Venue
-        type: string
-        required: true
+    search:
+    - title
+    - venue
 
-      - name: city
-        label: City
-        type: string
-        default: Prague
+    default:
+      sort: event_date
+      order: desc
 
-      - name: address
-        label: Address
-        type: string
+  fields:
+  - name: title
+    label: Event title
+    type: string
+    required: true
 
-      - name: image
-        label: Flyer
-        type: image
-        required: true
-        options:
-          media: images
-          path: events
-          rename: safe
+  - name: event_date
+    label: Date
+    type: date
+    required: true
+    options:
+      format: yyyy-MM-dd
 
-      - name: status
-        label: Status
-        type: select
-        required: true
-        default: upcoming
-        options:
-          values:
-            - name: upcoming
-              label: Upcoming
-            - name: past
-              label: Past
+  - name: date_display
+    label: Date shown on site
+    type: string
+    description: 'Example: 03. 10. 2026'
+    required: true
 
-      - name: featured
-        label: Show on homepage
-        type: boolean
-        default: false
+  - name: venue
+    label: Venue
+    type: string
+    required: true
 
-      - name: published
-        label: Published
-        type: boolean
-        default: true
+  - name: city
+    label: City
+    type: string
+    default: Prague
 
-      - name: summary_cs
-        label: Card text CZ
-        type: text
-        required: true
+  - name: address
+    label: Address
+    type: string
 
-      - name: summary_en
-        label: Card text EN
-        type: text
-        required: true
+  - name: image
+    label: Flyer
+    type: image
+    required: true
+    options:
+      media: images
+      path: events
+      rename: safe
 
-      - name: description_cs
-        label: Detail description CZ
-        type: text
-        required: true
+  - name: status
+    label: Status
+    type: select
+    required: true
+    default: upcoming
+    options:
+      values:
+      - name: upcoming
+        label: Upcoming
+      - name: past
+        label: Past
 
-      - name: description_en
-        label: Detail description EN
-        type: text
-        required: true
+  - name: featured
+    label: Show on homepage
+    type: boolean
+    default: false
 
-      - name: extra_info_cs
-        label: Extra info CZ
-        type: text
+  - name: published
+    label: Published
+    type: boolean
+    default: true
 
-      - name: extra_info_en
-        label: Extra info EN
-        type: text
+  - name: summary_en
+    label: Card text
+    type: text
+    required: true
 
-      - name: ticket_url
-        label: GoOut / tickets URL
-        type: string
+  - name: description_en
+    label: Detail description
+    type: rich-text
+    required: true
+    options:
+      format: markdown
+      media: false
 
-      - name: ticket_label
-        label: Ticket button label
-        type: string
-        default: "Tickets / GoOut"
+  - name: extra_info_en
+    label: Extra info
+    type: text
 
-      - name: facebook
-        label: Facebook event URL
-        type: string
+  - name: ticket_url
+    label: GoOut / tickets URL
+    type: string
 
-      - name: instagram
-        label: Instagram post URL
-        type: string
+  - name: ticket_label
+    label: Ticket button label
+    type: string
+    default: Tickets / GoOut
 
-      - name: lineup_headliners
-        label: Headliners
-        type: string
-        list: true
+  - name: facebook
+    label: Facebook event URL
+    type: string
 
-      - name: lineup_supporting
-        label: Supporting lineup
-        type: string
-        list: true
+  - name: instagram
+    label: Instagram post URL
+    type: string
+
+  - name: lineup_headliners
+    label: Headliners
+    type: string
+    list: true
+
+  - name: lineup_supporting
+    label: Supporting lineup
+    type: string
+    list: true
 
 
-  # =========================================================
-  # CREW
-  # =========================================================
+# =========================================================
+# CREW
+# =========================================================
 
-  - name: crew
-    label: Crew
-    type: collection
-    path: _crew
-    filename: "{primary}.md"
+- name: crew
+  label: Crew
+  type: collection
+  path: _crew
+  filename: '{primary}.md'
 
-    view:
-      fields:
-        - title
-        - role
-        - order
-        - published
-      primary: title
-      sort:
-        - order
-        - title
-      search:
-        - title
-        - role
-      default:
-        sort: order
-        order: asc
-
+  view:
     fields:
-      - name: title
-        label: Artist name
-        type: string
-        required: true
+    - title
+    - role
+    - order
+    - published
 
-      - name: order
-        label: Position/order
-        type: number
-        required: true
+    primary: title
 
-      - name: role
-        label: Role
-        type: string
-        required: true
+    sort:
+    - order
+    - title
 
-      - name: image
-        label: Photo
-        type: image
-        required: true
-        options:
-          media: images
-          path: crew
-          rename: safe
+    search:
+    - title
+    - role
 
-      - name: published
-        label: Published
-        type: boolean
-        default: true
+    default:
+      sort: order
+      order: asc
 
-      - name: preview_cs
-        label: Card text CZ
-        type: text
-        required: true
+  fields:
+  - name: title
+    label: Artist name
+    type: string
+    required: true
 
-      - name: preview_en
-        label: Card text EN
-        type: text
-        required: true
+  - name: order
+    label: Position/order
+    type: number
+    required: true
 
-      - name: bio_cs
-        label: Bio CZ
-        type: text
-        required: true
+  - name: role
+    label: Role
+    type: string
+    required: true
 
-      - name: bio_en
-        label: Bio EN
-        type: text
-        required: true
+  - name: image
+    label: Photo
+    type: image
+    required: true
+    options:
+      media: images
+      path: crew
+      rename: safe
 
-      - name: instagram
-        label: Instagram URL
-        type: string
+  - name: published
+    label: Published
+    type: boolean
+    default: true
 
-      - name: facebook
-        label: Facebook URL
-        type: string
+  - name: preview_en
+    label: Card text
+    type: text
+    required: true
 
-      - name: soundcloud
-        label: SoundCloud URL
-        type: string
+  - name: bio_en
+    label: Bio
+    type: rich-text
+    required: true
+    options:
+      format: markdown
+      media: false
 
-      - name: youtube
-        label: YouTube URL
-        type: string
+  - name: instagram
+    label: Instagram URL
+    type: string
+
+  - name: facebook
+    label: Facebook URL
+    type: string
+
+  - name: soundcloud
+    label: SoundCloud URL
+    type: string
+
+  - name: youtube
+    label: YouTube URL
+    type: string
 
 
-  # =========================================================
-  # SOUND / RELEASES
-  # =========================================================
+# =========================================================
+# SOUND / RELEASES
+# =========================================================
 
-  - name: sound_posts
-    label: Sound / Releases
-    type: collection
-    path: _sound_posts
-    filename: "{primary}.md"
+- name: sound_posts
+  label: Sound / Releases
+  type: collection
+  path: _sound_posts
+  filename: '{primary}.md'
 
-    view:
-      fields:
-        - title
-        - role
-        - order
-        - featured
-        - published
-      primary: title
-      sort:
-        - order
-        - title
-      search:
-        - title
-        - role
-      default:
-        sort: order
-        order: asc
-
+  view:
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+    - title
+    - role
+    - order
+    - featured
+    - published
 
-      - name: order
-        label: Position/order
-        type: number
-        required: true
+    primary: title
 
-      - name: role
-        label: Label above title
-        type: string
-        default: "NEW RELEASE"
+    sort:
+    - order
+    - title
 
-      - name: image
-        label: Cover / image
-        type: image
-        required: true
-        options:
-          media: images
-          path: sound
-          rename: safe
+    search:
+    - title
+    - role
 
-      - name: published
-        label: Published
-        type: boolean
-        default: true
+    default:
+      sort: order
+      order: asc
 
-      - name: featured
-        label: Show on homepage
-        type: boolean
-        default: false
+  fields:
+  - name: title
+    label: Title
+    type: string
+    required: true
 
-      - name: summary_cs
-        label: Card text CZ
-        type: text
-        required: true
+  - name: order
+    label: Position/order
+    type: number
+    required: true
 
-      - name: summary_en
-        label: Card text EN
-        type: text
-        required: true
+  - name: role
+    label: Label above title
+    type: string
+    default: NEW RELEASE
 
-      - name: description_cs
-        label: Detail text CZ
-        type: text
-        required: true
+  - name: image
+    label: Cover / image
+    type: image
+    required: true
+    options:
+      media: images
+      path: sound
+      rename: safe
 
-      - name: description_en
-        label: Detail text EN
-        type: text
-        required: true
+  - name: published
+    label: Published
+    type: boolean
+    default: true
 
-      - name: primary_url
-        label: Main link URL
-        type: string
+  - name: featured
+    label: Show on homepage
+    type: boolean
+    default: false
 
-      - name: primary_label
-        label: Main button label
-        type: string
+  - name: summary_en
+    label: Card text
+    type: text
+    required: true
 
-      - name: secondary_url
-        label: Secondary link URL
-        type: string
+  - name: description_en
+    label: Release description
+    type: rich-text
+    required: true
+    options:
+      format: markdown
+      media: false
 
-      - name: secondary_label
-        label: Secondary button label
-        type: string
+  - name: smartlink_url
+    label: All platforms / Smartlink URL
+    type: string
+    description: Optional master link to all streaming platforms.
+
+  - name: soundcloud_url
+    label: SoundCloud URL
+    type: string
+
+  - name: free_download_url
+    label: Free Download URL
+    type: string
+    description: Copy the FREE DOWNLOAD link from the SoundCloud track/release description. Leave empty if unavailable.
+
+  - name: spotify_url
+    label: Spotify URL
+    type: string
+
+  - name: apple_music_url
+    label: Apple Music URL
+    type: string
+
+  - name: youtube_url
+    label: YouTube URL
+    type: string
+
+  - name: deezer_url
+    label: Deezer URL
+    type: string
+
+  - name: tidal_url
+    label: TIDAL URL
+    type: string
+
+  - name: amazon_music_url
+    label: Amazon Music URL
+    type: string
+
+  - name: beatport_url
+    label: Beatport URL
+    type: string
+
+  - name: bandcamp_url
+    label: Bandcamp URL
+    type: string
 
 
-  # =========================================================
-  # MEDIA / VIDEOSETS
-  # =========================================================
+# =========================================================
+# MEDIA / VIDEOSETS
+# =========================================================
 
-  - name: media_posts
-    label: Media / Videosets
-    type: collection
-    path: _media_posts
-    filename: "{primary}.md"
+- name: media_posts
+  label: Media / Videosets
+  type: collection
+  path: _media_posts
+  filename: '{primary}.md'
 
-    view:
-      fields:
-        - title
-        - role
-        - order
-        - published
-      primary: title
-      sort:
-        - order
-        - title
-      search:
-        - title
-        - role
-      default:
-        sort: order
-        order: asc
-
+  view:
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+    - title
+    - role
+    - order
+    - published
 
-      - name: order
-        label: Position/order
-        type: number
-        required: true
+    primary: title
 
-      - name: role
-        label: Type
-        type: string
-        default: Videoset
+    sort:
+    - order
+    - title
 
-      - name: published
-        label: Published
-        type: boolean
-        default: true
+    search:
+    - title
+    - role
 
-      - name: youtube_embed_url
-        label: YouTube embed URL
-        type: string
-        required: true
-        description: "Example: https://www.youtube.com/embed/VIDEO_ID"
+    default:
+      sort: order
+      order: asc
 
-      - name: description_cs
-        label: Description CZ
-        type: text
-        required: true
+  fields:
+  - name: title
+    label: Title
+    type: string
+    required: true
 
-      - name: description_en
-        label: Description EN
-        type: text
-        required: true
+  - name: order
+    label: Position/order
+    type: number
+    required: true
+
+  - name: role
+    label: Type
+    type: string
+    default: Videoset
+
+  - name: published
+    label: Published
+    type: boolean
+    default: true
+
+  - name: youtube_embed_url
+    label: YouTube embed URL
+    type: string
+    required: true
+    description: 'Example: https://www.youtube.com/embed/VIDEO_ID'
+
+  - name: description_en
+    label: Description
+    type: rich-text
+    required: true
+    options:
+      format: markdown
+      media: false
 
 
-  # =========================================================
-  # RENTAL
-  # =========================================================
+# =========================================================
+# RENTAL
+# =========================================================
 
-  - name: rental_items
-    label: Rental
-    type: collection
-    path: _rental_items
-    filename: "{primary}.md"
+- name: rental_items
+  label: Rental
+  type: collection
+  path: _rental_items
+  filename: '{primary}.md'
 
-    view:
-      fields:
-        - title
-        - quantity
-        - category
-        - order
-        - published
-      primary: title
-      sort:
-        - category
-        - order
-        - title
-      search:
-        - title
-        - category
-      default:
-        sort: order
-        order: asc
-
+  view:
     fields:
-      - name: title
-        label: Product name
-        type: string
-        required: true
+    - title
+    - quantity
+    - category
+    - order
+    - published
 
-      - name: quantity
-        label: Quantity
-        type: number
-        required: true
-        default: 1
+    primary: title
 
-      - name: category
-        label: Category
-        type: select
-        required: true
-        options:
-          values:
-            - name: dj_audio
-              label: DJ Equipment
+    sort:
+    - category
+    - order
+    - title
 
-            - name: lights
-              label: Lighting
+    search:
+    - title
+    - category
 
-            - name: pa
-              label: PA / Speakers
+    default:
+      sort: order
+      order: asc
 
-            - name: amplification
-              label: Amplifiers / Processing
+  fields:
+  - name: title
+    label: Product name
+    type: string
+    required: true
 
-            - name: control
-              label: Control / Data
+  - name: quantity
+    label: Quantity
+    type: number
+    required: true
+    default: 1
 
-            - name: accessories
-              label: Accessories
+  - name: category
+    label: Category
+    type: select
+    required: true
+    options:
+      values:
+      - name: dj_audio
+        label: DJ Equipment
 
-      - name: order
-        label: Position/order
-        type: number
-        required: true
+      - name: lights
+        label: Lighting
 
-      - name: image
-        label: Product photo
-        type: image
-        description: "Optional. Photo can be added later."
-        options:
-          media: images
-          path: rental
-          rename: safe
+      - name: pa
+        label: PA / Speakers
 
-      - name: description_cs
-        label: Description CZ
-        type: text
+      - name: amplification
+        label: Amplifiers / Processing
 
-      - name: description_en
-        label: Description EN
-        type: text
+      - name: control
+        label: Control / Data
 
-      - name: published
-        label: Published
-        type: boolean
-        default: true
+      - name: accessories
+        label: Accessories
 
+  - name: order
+    label: Position/order
+    type: number
+    required: true
 
-  # =========================================================
-  # LEGAL PAGES
-  # =========================================================
+  - name: image
+    label: Product photo
+    type: image
+    description: Optional. Photo can be added later.
+    options:
+      media: images
+      path: rental
+      rename: safe
 
-  - name: legal
-    label: Legal / Privacy
-    type: group
-    items:
-      - name: privacy_page
-        label: Ochrana osobních údajů
-        type: file
-        path: privacy.md
-        operations:
-          delete: false
-        fields:
-          - name: layout
-            type: string
-            hidden: true
+  - name: description_en
+    label: Description
+    type: text
 
-          - name: permalink
-            type: string
-            hidden: true
-
-          - name: title_cs
-            label: Nadpis CZ
-            type: string
-            required: true
-
-          - name: title_en
-            label: Title EN
-            type: string
-            required: true
-
-          - name: last_updated
-            label: Poslední aktualizace
-            type: string
-            description: "Example: 17. 9. 2026"
-            required: true
-
-          - name: description
-            label: SEO description
-            type: text
-
-          - name: content_cs
-            label: Text CZ
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
-
-          - name: content_en
-            label: Text EN
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
-
-      - name: terms_page
-        label: Obchodní podmínky
-        type: file
-        path: terms.md
-        operations:
-          delete: false
-        fields:
-          - name: layout
-            type: string
-            hidden: true
-
-          - name: permalink
-            type: string
-            hidden: true
-
-          - name: title_cs
-            label: Nadpis CZ
-            type: string
-            required: true
-
-          - name: title_en
-            label: Title EN
-            type: string
-            required: true
-
-          - name: last_updated
-            label: Poslední aktualizace
-            type: string
-            description: "Example: 17. 9. 2026"
-            required: true
-
-          - name: description
-            label: SEO description
-            type: text
-
-          - name: content_cs
-            label: Text CZ
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
-
-          - name: content_en
-            label: Text EN
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+  - name: published
+    label: Published
+    type: boolean
+    default: true
 
 
-  # =========================================================
-  # SITE SETTINGS
-  # =========================================================
+# =========================================================
+# LEGAL PAGES
+# =========================================================
 
-  - name: site_settings
-    label: Site settings
+- name: legal
+  label: Legal / Privacy
+  type: group
+
+  items:
+
+  - name: privacy_page
+    label: Privacy Policy
     type: file
-    path: _data/site.yml
+    path: privacy.md
 
     operations:
       delete: false
 
     fields:
-      - name: brand
-        label: Brand
-        type: string
-        readonly: true
+    - name: layout
+      type: string
+      hidden: true
 
-      - name: legal_operator_name
-        label: Legal operator / jméno nebo firma
-        type: string
-        description: "Required for Privacy Policy. Use the actual person or company operating YAMAN SOUND."
+    - name: permalink
+      type: string
+      hidden: true
 
-      - name: legal_ico
-        label: IČO
-        type: string
-        description: "Optional if you do not have an IČO."
+    - name: title_en
+      label: Title
+      type: string
+      required: true
 
-      - name: legal_address
-        label: Legal address / sídlo
-        type: string
-        description: "Address of the operator/data controller."
+    - name: last_updated
+      label: Last updated
+      type: string
+      description: 'Example: 17. 9. 2026'
+      required: true
 
-      - name: legal_email
-        label: Legal / privacy contact email
-        type: string
+    - name: description
+      label: SEO description
+      type: text
 
-
-      - name: home_intro_cs
-        label: Homepage intro CZ
-        type: text
-
-      - name: home_intro_en
-        label: Homepage intro EN
-        type: text
-
-      - name: events_intro_cs
-        label: Events intro CZ
-        type: text
-
-      - name: events_intro_en
-        label: Events intro EN
-        type: text
-
-      - name: sound_intro_cs
-        label: Sound intro CZ
-        type: text
-
-      - name: sound_intro_en
-        label: Sound intro EN
-        type: text
-
-      - name: description_cs
-        label: Footer description CZ
-        type: text
-
-      - name: description_en
-        label: Footer description EN
-        type: text
-
-      - name: instagram_events
-        label: Instagram Events
-        type: string
-
-      - name: instagram_recordings
-        label: Instagram Recordings
-        type: string
-
-      - name: facebook
-        label: Facebook
-        type: string
-
-      - name: soundcloud
-        label: SoundCloud
-        type: string
-
-      - name: youtube
-        label: YouTube
-        type: string
+    - name: content_en
+      label: Text
+      type: rich-text
+      required: true
+      options:
+        format: markdown
+        media: false
 
 
-      # =====================================================
-      # RENTAL
-      # =====================================================
+  - name: terms_page
+    label: Terms & Conditions
+    type: file
+    path: terms.md
 
-      - name: rental_intro_cs
-        label: Rental intro CZ
-        type: text
+    operations:
+      delete: false
 
-      - name: rental_intro_en
-        label: Rental intro EN
-        type: text
+    fields:
+    - name: layout
+      type: string
+      hidden: true
 
-      - name: rental_contact_email
-        label: Rental contact email
-        type: string
+    - name: permalink
+      type: string
+      hidden: true
+
+    - name: title_en
+      label: Title
+      type: string
+      required: true
+
+    - name: last_updated
+      label: Last updated
+      type: string
+      description: 'Example: 17. 9. 2026'
+      required: true
+
+    - name: description
+      label: SEO description
+      type: text
+
+    - name: content_en
+      label: Text
+      type: rich-text
+      required: true
+      options:
+        format: markdown
+        media: false
 
 
-      # =====================================================
-      # NEWSLETTER
-      # =====================================================
+# =========================================================
+# SITE SETTINGS
+# =========================================================
 
-      - name: newsletter_image
-        label: Newsletter poster
-        type: image
-        options:
-          media: images
-          path: newsletter
-          rename: safe
+- name: site_settings
+  label: Site settings
+  type: file
+  path: _data/site.yml
 
-      - name: newsletter_headline
-        label: Newsletter headline
-        type: string
+  operations:
+    delete: false
 
-      - name: newsletter_text_cs
-        label: Newsletter text CZ
-        type: text
+  fields:
 
-      - name: newsletter_text_en
-        label: Newsletter text EN
-        type: text
+  - name: brand
+    label: Brand
+    type: string
+    readonly: true
 
-      - name: newsletter_form_action
-        label: Brevo form action URL
-        type: string
-        description: "Public sibforms.com/serve/... action URL from the embedded Brevo signup form."
+  - name: legal_operator_name
+    label: Legal operator / person or company
+    type: string
+    description: Required for Privacy Policy. Use the actual person or company operating YAMAN SOUND.
+
+  - name: legal_ico
+    label: Company ID / IČO
+    type: string
+    description: Optional if you do not have a company ID / IČO.
+
+  - name: legal_address
+    label: Legal address / registered office
+    type: string
+    description: Address of the operator / data controller.
+
+  - name: legal_email
+    label: Legal / privacy contact email
+    type: string
+
+
+  # =====================================================
+  # HOMEPAGE / PAGE TEXTS
+  # =====================================================
+
+  - name: home_intro_en
+    label: Homepage intro
+    type: text
+
+  - name: events_intro_en
+    label: Events intro
+    type: text
+
+  - name: sound_intro_en
+    label: Sound intro
+    type: text
+
+  - name: description_en
+    label: Footer description
+    type: text
+
+
+  # =====================================================
+  # SOCIALS
+  # =====================================================
+
+  - name: instagram_events
+    label: Instagram Events
+    type: string
+
+  - name: instagram_recordings
+    label: Instagram Recordings
+    type: string
+
+  - name: facebook
+    label: Facebook
+    type: string
+
+  - name: soundcloud
+    label: SoundCloud
+    type: string
+
+  - name: youtube
+    label: YouTube
+    type: string
+
+
+  # =====================================================
+  # RENTAL
+  # =====================================================
+
+  - name: rental_intro_en
+    label: Rental intro
+    type: text
+
+  - name: rental_contact_email
+    label: Rental contact email
+    type: string
+
+
+  # =====================================================
+  # NEWSLETTER
+  # =====================================================
+
+  - name: newsletter_image
+    label: Newsletter poster
+    type: image
+    options:
+      media: images
+      path: newsletter
+      rename: safe
+
+  - name: newsletter_headline
+    label: Newsletter headline
+    type: string
+
+  - name: newsletter_text_en
+    label: Newsletter text
+    type: text
+
+  - name: newsletter_form_action
+    label: Brevo form action URL
+    type: string
+    description: Public sibforms.com/serve/... action URL from the embedded Brevo signup form.
