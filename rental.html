@@ -3,7 +3,7 @@ layout: default
 nav: rental
 title: Rental
 permalink: /rental.html
-description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control and lighting.
+description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control, lighting, photo and video.
 ---
 <main class="page rental-page no-big-title">
   <div class="container">
@@ -32,6 +32,7 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
         <button type="button" class="rental-filter-btn" data-rental-category="amplification" aria-pressed="false">AMPS / PROCESSING</button>
         <button type="button" class="rental-filter-btn" data-rental-category="control" aria-pressed="false">CONTROL / DATA</button>
         <button type="button" class="rental-filter-btn" data-rental-category="accessories" aria-pressed="false">ACCESSORIES</button>
+        <button type="button" class="rental-filter-btn" data-rental-category="photo_video" aria-pressed="false">FOTO / VIDEO</button>
       </div>
     </div>
 
@@ -80,6 +81,14 @@ description: YAMAN equipment rental in Prague — DJ gear, PA, audio, control an
     <section class="rental-group" data-rental-group="accessories">
       <div class="rental-group-heading"><p class="role">06</p><h2>ACCESSORIES</h2></div>
       <div class="rental-grid">{% for item in accessories %}{% include rental-card.html item=item %}{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    {% assign photo_video = rental | where: 'category', 'photo_video' %}
+    {% if photo_video.size > 0 %}
+    <section class="rental-group" data-rental-group="photo_video">
+      <div class="rental-group-heading"><p class="role">07</p><h2>FOTO / VIDEO</h2></div>
+      <div class="rental-grid">{% for item in photo_video %}{% include rental-card.html item=item %}{% endfor %}</div>
     </section>
     {% endif %}
 
