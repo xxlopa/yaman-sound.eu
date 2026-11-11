@@ -508,6 +508,9 @@ content:
       - name: accessories
         label: Accessories
 
+      - name: photo_video
+        label: FOTO / VIDEO
+
   - name: order
     label: Position/order
     type: number
