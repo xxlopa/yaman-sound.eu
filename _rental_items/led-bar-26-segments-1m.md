@@ -1,5 +1,5 @@
 ---
-title: "LED BAR 26 SEGMENTŮ — 1 M"
+title: LED BAR 26 SEG RGBW DMX - 1 M
 quantity: 4
 category: lights
 order: 10
