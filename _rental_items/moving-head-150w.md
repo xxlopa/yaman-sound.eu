@@ -1,6 +1,6 @@
 ---
-title: "MOVING HEAD 150W"
-quantity: 2
+title: MOVING HEAD 150W
+quantity: 4
 category: lights
 order: 20
 published: true
