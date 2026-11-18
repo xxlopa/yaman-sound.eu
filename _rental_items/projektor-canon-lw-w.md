@@ -1,7 +1,7 @@
 ---
-title: Projektor CANON LW-W
+title: Projektor CANON LW-WX300ST
 quantity: 1
 category: lights
-order: 0
+order: 20
 published: true
 ---
