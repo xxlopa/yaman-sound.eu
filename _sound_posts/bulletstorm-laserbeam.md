@@ -4,7 +4,7 @@ order: 0
 role: NEW RELEASE
 image: /assets/uploads/1cb94c26-c8b9-4561-b68c-6dafaa6fc0ed.webp
 published: true
-featured: false
+featured: true
 summary_en: Bulletstorm lands on Yaman Recordings with LASERBEAM — a two-track
   release driven by heavy basslines, futuristic sound design and uncompromising
   neurofunk energy.
